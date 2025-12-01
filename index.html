@@ -4,1115 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women in Design Uganda</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Courier New', 'Courier', monospace;
-            color: #2d3e36;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            padding: 1.2rem 4%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #a8c4b5;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #2d3e36;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #a8c4b5;
-        }
-
-        .nav-links a.active {
-            background: #a8c4b5;
-            color: white;
-            padding: 0.6rem 1.8rem;
-            border-radius: 30px;
-        }
-
-        .auth-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .btn {
-            padding: 0.7rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #a8c4b5;
-            color: #2d3e36;
-        }
-
-        .btn-primary {
-            background: #a8c4b5;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(74, 94, 84, 0.65), rgba(74, 94, 84, 0.65)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%235a6f63" width="1200" height="800"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding: 0 4%;
-            position: relative;
-            color: white;
-            margin-top: 80px;
-            cursor: pointer;
-        }
-
-        .hero:hover {
-            opacity: 0.95;
-        }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-            line-height: 1.1;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
-        .search-bar {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 0.4rem 0.5rem;
-            border-radius: 50px;
-            display: flex;
-            max-width: 580px;
-        }
-
-        .search-bar input {
-            flex: 1;
-            border: none;
-            outline: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            color: #2d3e36;
-            background: transparent;
-        }
-
-        .search-bar input::placeholder {
-            color: #7a8a82;
-        }
-
-        .play-button {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 255, 255, 0.25);
-            border: 6px solid white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .play-button:hover {
-            transform: translate(-50%, -50%) scale(1.1);
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        .play-button::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 30px solid white;
-            border-top: 18px solid transparent;
-            border-bottom: 18px solid transparent;
-            margin-left: 8px;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 6rem 4%;
-        }
-
-        .section-light {
-            background: #f5f5f0;
-        }
-
-        .section-white {
-            background: #ffffff;
-        }
-
-        .section-gray {
-            background: #e8ede8;
-        }
-
-        h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            color: #2d3e36;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        /* Why We Exist Section */
-        .why-exist {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .why-exist-image {
-            position: relative;
-            border-radius: 25px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-        }
-
-        .why-exist-image:hover {
-            opacity: 0.95;
-        }
-
-        .why-exist-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        .logo-badge {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 120px;
-            background: #a8c4b5;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 8px solid #f5f5f0;
-            font-size: 2rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .why-exist-content h2 {
-            margin-bottom: 2rem;
-        }
-
-        .why-exist-content p {
-            font-size: 1.05rem;
-            margin-bottom: 1.8rem;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        /* How We Make It Happen */
-        .approach {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .approach-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .approach-header .subtitle {
-            color: #7a8a82;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .approach-intro {
-            max-width: 900px;
-            margin: 0 auto 4rem;
-            font-size: 1.15rem;
-            color: #555;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .card-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .card-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            color: #2d3e36;
-            margin-top: auto;
-        }
-
-        .card.highlight {
-            background: #4a5e54;
-            color: white;
-            padding: 3rem 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card.highlight h3 {
-            color: white;
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .card.highlight .btn {
-            align-self: flex-start;
-        }
-
-        /* Statistics Section */
-        .stats {
-            background: linear-gradient(to bottom, #e8ede8 50%, #4a5e54 50%);
-            padding: 6rem 4%;
-        }
-
-        .stats-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .stats h2 {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: #c5d9cc;
-            padding: 3.5rem 2rem;
-            border-radius: 25px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .stat-icon {
-            width: 100px;
-            height: 100px;
-            background: #4a5e54;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #2d3e36;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            color: #2d3e36;
-        }
-
-        /* Events Section */
-        .events {
-            background: #4a5e54;
-            color: white;
-            padding: 6rem 4%;
-        }
-
-        .events-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .events h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        .events-intro {
-            max-width: 900px;
-            margin-bottom: 4rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
-
-        .events-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 2rem;
-            height: 700px;
-        }
-
-        .event-card {
-            border-radius: 30px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .event-card:first-child {
-            grid-row: span 2;
-        }
-
-        .event-card:nth-child(2) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-
-        .event-card:nth-child(3) {
-            grid-column: 2;
-            grid-row: 2;
-        }
-
-        .event-card:nth-child(4) {
-            grid-column: 2;
-            grid-row: 2;
-        }
-
-        /* Rearrange for 3 cards on right side */
-        .events-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            height: auto;
-        }
-
-        .event-card:first-child {
-            grid-row: span 2;
-        }
-
-        .events-right-column {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .event-card-small-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .event-image {
-            width: 100%;
-            height: 100%;
-            min-height: 300px;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%237a8a82" width="400" height="300"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2.5rem;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .event-card:hover .event-image {
-            background-size: 105%;
-        }
-
-        .event-card h3 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .event-date {
-            font-size: 1.05rem;
-            opacity: 0.95;
-        }
-
-        /* Featured Profile Section */
-        .featured-profile {
-            padding: 6rem 4%;
-            background: #f5f5f0;
-        }
-
-        .featured-container {
-            max-width: 1500px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 380px 1fr 450px;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .profile-left {
-            text-align: center;
-            background: white;
-            padding: 0;
-            border-radius: 25px;
-            position: sticky;
-            top: 120px;
-        }
-
-        .profile-image-wrapper {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: -50px auto 2rem;
-            border: 12px solid #4a5e54;
-            background: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .profile-image-wrapper:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        .profile-content {
-            padding: 0 2.5rem 3rem;
-        }
-
-        .profile-id {
-            color: #a8c4b5;
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            letter-spacing: 2px;
-        }
-
-        .profile-name {
-            font-size: 2.2rem;
-            color: #2d3e36;
-            margin-bottom: 0.8rem;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .profile-role {
-            color: #555;
-            font-size: 1.15rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .profile-company {
-            color: #555;
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-        }
-
-        .profile-divider {
-            width: 100%;
-            height: 1px;
-            background: #e0e0d8;
-            margin: 2rem 0;
-        }
-
-        .profile-bio {
-            color: #666;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-            text-align: center;
-        }
-
-        .profile-left .btn {
-            display: inline-block;
-            padding: 0.9rem 2.5rem;
-            font-size: 0.95rem;
-        }
-
-        .profile-center {
-            position: relative;
-        }
-
-        .profile-video {
-            width: 100%;
-            aspect-ratio: 16/11;
-            border-radius: 30px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .profile-video:hover {
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-            transform: scale(1.02);
-        }
-
-        .profile-video img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-
-        .profile-right {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 25px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
-
-        .projects-title {
-            font-size: 2rem;
-            color: #2d3e36;
-            margin-bottom: 2rem;
-            font-weight: bold;
-        }
-
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .project-item {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 1.5rem;
-            align-items: center;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #e8e8e0;
-            transition: all 0.3s;
-        }
-
-        .project-item:first-child {
-            padding-top: 0;
-        }
-
-        .project-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .project-item:hover {
-            transform: translateX(5px);
-        }
-
-        .project-image {
-            width: 140px;
-            height: 100px;
-            border-radius: 15px;
-            object-fit: cover;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .project-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        .project-info h4 {
-            font-size: 1.4rem;
-            color: #2d3e36;
-            margin-bottom: 0.4rem;
-            font-weight: bold;
-        }
-
-        .project-info p {
-            color: #7a8a82;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: #a8c4b5;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            border: 2px solid #a8c4b5;
-            padding: 0.5rem 1.4rem;
-            border-radius: 25px;
-            transition: all 0.3s;
-        }
-
-        .project-link:hover {
-            background: #a8c4b5;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(168, 196, 181, 0.3);
-        }
-
-        .card-image,
-        .member-image,
-        .profile-image,
-        .project-image {
-            transition: all 0.3s;
-        }
-
-        .event-card {
-            cursor: pointer;
-        }
-
-        /* Members Section */
-        .members {
-            padding: 6rem 4%;
-        }
-
-        .members-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .members h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .members-intro {
-            max-width: 800px;
-            margin: 0 auto 4rem;
-            font-size: 1.1rem;
-            color: #555;
-            text-align: center;
-            line-height: 1.8;
-        }
-
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            padding: 0 60px;
-        }
-
-        .carousel-container {
-            display: flex;
-            gap: 2rem;
-            transition: transform 0.5s ease;
-        }
-
-        .member-card {
-            min-width: calc(25% - 1.5rem);
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .member-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .member-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .member-card:hover .member-image {
-            transform: scale(1.05);
-        }
-
-        .member-info {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .member-id {
-            color: #a8c4b5;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-
-        .member-info h3 {
-            font-size: 1.6rem;
-            color: #2d3e36;
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .member-role {
-            color: #7a8a82;
-            margin: 0.3rem 0;
-            font-size: 1rem;
-        }
-
-        .member-company {
-            color: #7a8a82;
-            font-size: 1rem;
-        }
-
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(168, 196, 181, 0.9);
-            color: white;
-            border: none;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 2rem;
-            transition: all 0.3s;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-button:hover {
-            background: #a8c4b5;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-button.prev {
-            left: 0;
-        }
-
-        .carousel-button.next {
-            right: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: #f5f5f0;
-            padding: 5rem 4% 3rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 6rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-logo {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #a8c4b5;
-            margin-bottom: 3rem;
-            letter-spacing: 2px;
-        }
-
-        .footer-newsletter h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            color: #2d3e36;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 0;
-            max-width: 500px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: 2px solid #2d3e36;
-            border-radius: 50px;
-            outline: none;
-            font-size: 1rem;
-            color: #2d3e36;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: space-between;
-            gap: 4rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: #2d3e36;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-column a {
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 1rem;
-        }
-
-        .footer-column a:hover {
-            color: #a8c4b5;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid #d0d0c8;
-            color: #7a8a82;
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .featured-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .profile-left {
-                position: relative;
-                top: 0;
-            }
-
-            .profile-image-wrapper {
-                margin-top: 2rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .events-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .events-grid > div {
-                grid-template-rows: auto;
-            }
-
-            .events-grid > div > div {
-                grid-template-columns: 1fr;
-            }
-
-            .member-card {
-                min-width: calc(33.333% - 1.34rem);
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 3%;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .play-button {
-                width: 80px;
-                height: 80px;
-                right: 5%;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            .why-exist {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .events-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .member-card {
-                min-width: 100%;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main>
     <!-- Navigation -->
     <nav>
-        <div class="logo">WID</div>
+        <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
         <div class="nav-links">
-            <a href="#home" class="active">HOME</a>
-            <a href="#designers">DESIGNERS</a>
-            <a href="#suppliers">SUPPLIERS</a>
-            <a href="#programs">PROGRAMS</a>
-            <a href="#events">EVENTS</a>
-            <a href="#about">ABOUT</a>
+            <a href="index.html" class="active">HOME</a>
+            <a href="designers.html">DESIGNERS</a>
+            <a href="suppliers.html">SUPPLIERS</a>
+            <a href="programs.html">PROGRAMS</a>
+            <a href="index.html#events">EVENTS</a>
+            <a href="about.html">ABOUT</a>
         </div>
         <div class="auth-buttons">
-            <a href="#login" class="btn btn-outline">LOGIN</a>
-            <a href="#join" class="btn btn-primary">JOIN WID</a>
+            <a href="login.html" class="btn btn-outline">LOGIN</a>
+            <a href="join-wid.html" class="btn btn-primary">JOIN WID</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero" onclick="replaceHeroBackground(this)">
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video-background">
+            <source src="images/videos/HeroVideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="hero-content">
             <h1>Empowering<br>Women in Design</h1>
             <p>Connect with Uganda's most talented women designers and trusted suppliers in the construction and design industry.</p>
             <div class="search-bar">
                 <input type="text" placeholder="Search designers by specialty, location, or name...">
             </div>
+            <div class="hero-actions">
+                <a href="#why-exist-section" class="btn btn-primary hero-explore-btn">Explore &#x25BC;</a>
+            </div>
         </div>
-        <div class="play-button" onclick="event.stopPropagation(); playVideo('hero');"></div>
+        <div class="play-button"></div>
     </section>
 
     <!-- Why We Exist Section -->
-    <section class="why-exist-section section-light">
+    <section id="why-exist-section" class="why-exist-section section-light">
         <div class="why-exist">
-            <div class="why-exist-image" onclick="replaceWhyExistImage(this)">
-                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 500'><rect fill='%23a8c4b5' width='600' height='500'/></svg>" alt="Team Photo">
-                <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; pointer-events: all;" onclick="event.stopPropagation(); playVideo('why-exist');"></div>
+            <div class="why-exist-image">
+                <img src="images/why-we-exist.jpg" alt="Team Photo">
+                <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; pointer-events: all;"></div>
                 <div class="logo-badge">WID</div>
             </div>
             <div class="why-exist-content">
@@ -1133,13 +70,13 @@
         <p class="approach-intro">We connect women designers with clients, suppliers, and mentors across Uganda through a powerful digital platform and community. Our members gain visibility, build networks, and grow through structured programs:</p>
         <div class="cards-grid">
             <div class="card" onclick="replaceCardImage(this)">
-                <img class="card-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23f5c4b8' width='400' height='300'/></svg>" alt="Designer Directory">
+                <img class="card-image" src="images/designer-directory.jpg" alt="Designer Directory">
                 <div class="card-content">
                     <h3>Designer Directory</h3>
                 </div>
             </div>
             <div class="card" onclick="replaceCardImage(this)">
-                <img class="card-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23d4e4e8' width='400' height='300'/></svg>" alt="Supplier Network">
+                <img class="card-image" src="images/supplier-network.jpg" alt="Supplier Network">
                 <div class="card-content">
                     <h3>Supplier Network</h3>
                 </div>
@@ -1149,7 +86,7 @@
                 <a href="#" class="btn btn-outline" style="border-color: white; color: white;" onclick="event.stopPropagation();">LEARN MORE</a>
             </div>
             <div class="card" onclick="replaceCardImage(this)">
-                <img class="card-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23e8e4d8' width='400' height='300'/></svg>" alt="Community Impact">
+                <img class="card-image" src="images/community-impact.jpg" alt="Community Impact">
                 <div class="card-content">
                     <h3>Community Impact</h3>
                 </div>
@@ -1178,7 +115,6 @@
                     <div class="stat-label">Projects Completed</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-icon"></div>
                     <div class="stat-number">24</div>
                     <div class="stat-label">WID Members</div>
                 </div>
@@ -1192,28 +128,27 @@
             <h2>Upcoming<br>Events</h2>
             <p class="events-intro">Stay connected with the latest from Uganda's vibrant design community. Our upcoming events bring together creatives, collaborators, and changemakers from across the country.</p>
             <div class="events-grid">
-                <div class="event-card" onclick="replaceEventImage(this)">
-                    <div class="event-image" style="min-height: 100%;">
+                <div class="event-card">
+                    <div class="event-image" style="min-height: 100%; background-image: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)), url('images/event-workshop.jpg');">
                         <h3>WID Workshop</h3>
                         <p class="event-date">12th November - 2025</p>
                     </div>
                 </div>
                 <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 2rem;">
-                    <div class="event-card" onclick="replaceEventImage(this)">
-                        <div class="event-image">
+                    <div class="event-card">
+                        <div class="event-image" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)), url('images/event-networking.jpg');">
                             <h3>Tile factory tour</h3>
                             <p class="event-date">12th January - 2025</p>
                         </div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div class="event-card" onclick="replaceEventImage(this)">
-                            <div class="event-image">
-                                <h3>Ceramic Workshop</h3>
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)), url('images/event-conference.jpg');">
                                 <p class="event-date">12th November - 2025</p>
                             </div>
                         </div>
-                        <div class="event-card" onclick="replaceEventImage(this)">
-                            <div class="event-image">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)), url('images/event-portfolio.jpg');">
                                 <h3>Meet and Greet</h3>
                                 <p class="event-date">12th December - 2025</p>
                             </div>
@@ -1228,12 +163,12 @@
     <section class="featured-profile">
         <div class="featured-container">
             <div class="profile-left">
-                <div class="profile-image-wrapper" onclick="replaceProfileImage(this)">
-                    <img class="profile-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><circle cx='200' cy='200' r='200' fill='%234a5e54'/></svg>" alt="Sophia Nyanzi">
+                <div class="profile-image-wrapper">
+                    <img class="profile-image" src="images/sophia-profile.jpg" alt="Sophia Nyanzi">
                 </div>
                 <div class="profile-content">
                     <p class="profile-id">WID-001</p>
-                    <h3 class="profile-name">Sophia Nyanzi</h3>
+                    <h3 class="profile-name">Sophia<br>Nyanzi</h3>
                     <p class="profile-role">Interior Designer</p>
                     <p class="profile-company">Takai Spaces</p>
                     <div class="profile-divider"></div>
@@ -1242,16 +177,19 @@
                 </div>
             </div>
             <div class="profile-center">
-                <div class="profile-video" onclick="replaceProfileVideo(this)">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'><rect fill='%23888' width='800' height='600'/></svg>" alt="Portfolio">
-                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; pointer-events: all;" onclick="event.stopPropagation(); playVideo('profile');"></div>
+                <div class="profile-video">
+                    <video autoplay muted loop playsinline class="profile-video-background">
+                        <source src="images/videos/whyweexistVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; pointer-events: all;"></div>
                 </div>
             </div>
             <div class="profile-right">
                 <h3 class="projects-title">Featured Projects:</h3>
                 <div class="projects-list">
                     <div class="project-item">
-                        <img class="project-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23a87d5d' width='300' height='200'/></svg>" alt="Serena Kigo" onclick="replaceImage(this)">
+                        <img class="project-image" src="images/project-thumb-generic.jpg" alt="Serena Kigo">
                         <div class="project-info">
                             <h4>Serena Kigo</h4>
                             <p>Wood Works</p>
@@ -1259,7 +197,7 @@
                         </div>
                     </div>
                     <div class="project-item">
-                        <img class="project-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23d4dcd8' width='300' height='200'/></svg>" alt="Kisaasi Home" onclick="replaceImage(this)">
+                        <img class="project-image" src="images/project-thumb-generic.jpg" alt="Kisaasi Home">
                         <div class="project-info">
                             <h4>Kisaasi Home</h4>
                             <p>Interior Designer</p>
@@ -1267,7 +205,7 @@
                         </div>
                     </div>
                     <div class="project-item">
-                        <img class="project-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%236b8d6b' width='300' height='200'/></svg>" alt="Hotel EXP" onclick="replaceImage(this)">
+                        <img class="project-image" src="images/project-thumb-generic.jpg" alt="Hotel EXP">
                         <div class="project-info">
                             <h4>Hotel EXP</h4>
                             <p>Landscape Design</p>
@@ -1275,7 +213,7 @@
                         </div>
                     </div>
                     <div class="project-item">
-                        <img class="project-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%23c4a87d' width='300' height='200'/></svg>" alt="Kikonye Resort" onclick="replaceImage(this)">
+                        <img class="project-image" src="images/project-thumb-generic.jpg" alt="Kikonye Resort">
                         <div class="project-info">
                             <h4>Kikonye Resort</h4>
                             <p>Interior Designer</p>
@@ -1283,7 +221,7 @@
                         </div>
                     </div>
                     <div class="project-item">
-                        <img class="project-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'><rect fill='%2388b4c4' width='300' height='200'/></svg>" alt="Serena Kigo" onclick="replaceImage(this)">
+                        <img class="project-image" src="images/project-thumb-generic.jpg" alt="Serena Kigo">
                         <div class="project-info">
                             <h4>Serena Kigo</h4>
                             <p>Interior Designer</p>
@@ -1304,7 +242,7 @@
                 <button class="carousel-button prev" onclick="slideCarousel(-1)">‹</button>
                 <div class="carousel-container" id="carouselContainer">
                     <div class="member-card">
-                        <img class="member-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect fill='%234a5e54' width='300' height='400'/></svg>" alt="Sophia Nyanzi" onclick="replaceMemberImage(this)">
+                        <img class="member-image" src="images/designer-sophia.jpg" alt="Sophia Nyanzi">
                         <div class="member-info">
                             <p class="member-id">WID-001</p>
                             <h3>Sophia<br>Nyanzi</h3>
@@ -1313,7 +251,7 @@
                         </div>
                     </div>
                     <div class="member-card">
-                        <img class="member-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect fill='%23f5d4e4' width='300' height='400'/></svg>" alt="Sharon Tumusiime" onclick="replaceMemberImage(this)">
+                        <img class="member-image" src="images/designer-sharon.jpg" alt="Sharon Tumusiime">
                         <div class="member-info">
                             <p class="member-id">WID-002</p>
                             <h3>Sharon<br>Tumusiime</h3>
@@ -1322,7 +260,7 @@
                         </div>
                     </div>
                     <div class="member-card">
-                        <img class="member-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect fill='%23888' width='300' height='400'/></svg>" alt="Rachael Baine" onclick="replaceMemberImage(this)">
+                        <img class="member-image" src="images/designer-rachael.jpg" alt="Rachael Baine">
                         <div class="member-info">
                             <p class="member-id">WID-003</p>
                             <h3>Rachael Baine<br>Nkunziza</h3>
@@ -1331,7 +269,7 @@
                         </div>
                     </div>
                     <div class="member-card">
-                        <img class="member-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect fill='%236ba3b8' width='300' height='400'/></svg>" alt="Grace Linda" onclick="replaceMemberImage(this)">
+                        <img class="member-image" src="images/designer-grace.jpg" alt="Grace Linda">
                         <div class="member-info">
                             <p class="member-id">WID-004</p>
                             <h3>Grace Linda<br>Nabatanzi B.</h3>
@@ -1341,7 +279,7 @@
                     </div>
                     <!-- Duplicates for carousel -->
                     <div class="member-card">
-                        <img class="member-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect fill='%234a5e54' width='300' height='400'/></svg>" alt="Sophia Nyanzi" onclick="replaceMemberImage(this)">
+                        <img class="member-image" src="images/designer-sophia.jpg" alt="Sophia Nyanzi">
                         <div class="member-info">
                             <p class="member-id">WID-001</p>
                             <h3>Sophia<br>Nyanzi</h3>
@@ -1350,7 +288,7 @@
                         </div>
                     </div>
                     <div class="member-card">
-                        <img class="member-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'><rect fill='%23f5d4e4' width='300' height='400'/></svg>" alt="Sharon Tumusiime" onclick="replaceMemberImage(this)">
+                        <img class="member-image" src="images/designer-sharon.jpg" alt="Sharon Tumusiime">
                         <div class="member-info">
                             <p class="member-id">WID-002</p>
                             <h3>Sharon<br>Tumusiime</h3>
@@ -1363,13 +301,14 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-newsletter">
-                    <div class="footer-logo">WID</div>
+                    <div class="footer-logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="footer-logo-img"></div>
                     <h3>Subscribe to our newsletter</h3>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Email">
@@ -1379,11 +318,11 @@
                     <div class="footer-column">
                         <h3>Quick links</h3>
                         <ul>
-                            <li><a href="#designers">Find Designers</a></li>
-                            <li><a href="#suppliers">Connect to Suppliers</a></li>
-                            <li><a href="#events">Annual Events</a></li>
-                            <li><a href="#programs">Our Programs</a></li>
-                            <li><a href="#join">Become a Memeber</a></li>
+                            <li><a href="designers.html">Find Designers</a></li>
+                            <li><a href="suppliers.html">Connect to Suppliers</a></li>
+                            <li><a href="index.html#events">Annual Events</a></li>
+                            <li><a href="programs.html">Our Programs</a></li>
+                            <li><a href="join-wid.html">Become a Memeber</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -1401,241 +340,6 @@
         </div>
     </footer>
 
-    <script>
-        let currentSlide = 0;
-        const carousel = document.getElementById('carouselContainer');
-        const cards = document.querySelectorAll('.member-card');
-        const totalCards = 4; // Only count unique cards
-
-        function slideCarousel(direction) {
-            const cardWidth = cards[0].offsetWidth;
-            const gap = 32; // 2rem gap
-            const slideAmount = cardWidth + gap;
-            
-            currentSlide += direction;
-            
-            // Loop back to start
-            if (currentSlide >= totalCards) {
-                currentSlide = 0;
-            }
-            
-            // Loop to end
-            if (currentSlide < 0) {
-                currentSlide = totalCards - 1;
-            }
-            
-            carousel.style.transform = `translateX(-${currentSlide * slideAmount}px)`;
-        }
-
-        // Auto-scroll carousel every 4 seconds
-        setInterval(() => {
-            slideCarousel(1);
-        }, 4000);
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const navHeight = 80;
-                    const targetPosition = target.offsetTop - navHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Replace hero background
-        function replaceHeroBackground(heroElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        heroElement.style.backgroundImage = `linear-gradient(rgba(74, 94, 84, 0.65), rgba(74, 94, 84, 0.65)), url(${event.target.result})`;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Replace Why Exist section image
-        function replaceWhyExistImage(containerElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const img = containerElement.querySelector('img');
-                        img.src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Replace card image
-        function replaceCardImage(cardElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const img = cardElement.querySelector('.card-image');
-                        img.src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Replace profile image
-        function replaceProfileImage(wrapperElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const img = wrapperElement.querySelector('.profile-image');
-                        img.src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Replace profile video
-        function replaceProfileVideo(videoElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const img = videoElement.querySelector('img');
-                        img.src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Replace member image
-        function replaceMemberImage(imgElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        imgElement.src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Play button functionality
-        function playVideo(location) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'video/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('video/')) {
-                    const url = URL.createObjectURL(file);
-                    alert(`Video uploaded for ${location}. In a production environment, this would open a video player with: ${file.name}`);
-                    // In production, you would:
-                    // - Create a video element
-                    // - Set the src to the uploaded video
-                    // - Open in a modal/lightbox
-                }
-            };
-            input.click();
-        }
-
-        // Replace image functionality (for project images)
-        function replaceImage(imgElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        imgElement.src = event.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Replace event card background
-        function replaceEventImage(cardElement) {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = 'image/*';
-            input.onchange = function(e) {
-                const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const eventImage = cardElement.querySelector('.event-image');
-                        eventImage.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)), url(${event.target.result})`;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            };
-            input.click();
-        }
-
-        // Active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

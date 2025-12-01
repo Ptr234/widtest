@@ -50,117 +50,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 
-// Replace profile image
-function replaceProfileImage(wrapperElement) {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const img = wrapperElement.querySelector('.profile-image');
-                img.src = event.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-}
 
-// Replace profile video
-function replaceProfileVideo(videoElement) {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const img = videoElement.querySelector('img');
-                img.src = event.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-}
 
-// Replace member image
-function replaceMemberImage(imgElement) {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                imgElement.src = event.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-}
 
-// Play button functionality
-function playVideo(location) {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'video/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file && file.type.startsWith('video/')) {
-            const url = URL.createObjectURL(file);
-            alert(`Video uploaded for ${location}. In a production environment, this would open a video player with: ${file.name}`);
-            // In production, you would:
-            // - Create a video element
-            // - Set the src to the uploaded video
-            // - Open in a modal/lightbox
-        }
-    };
-    input.click();
-}
 
-// Replace image functionality (for project images)
-function replaceImage(imgElement) {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                imgElement.src = event.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-}
+// Hover to play/pause videos
+document.querySelectorAll('.hero').forEach(heroSection => {
+    const video = heroSection.querySelector('.hero-video-background');
+    if (video) {
+        heroSection.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        heroSection.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    }
+});
 
-// Replace event card background
-function replaceEventImage(cardElement) {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = 'image/*';
-    input.onchange = function(e) {
-        const file = e.target.files[0];
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const eventImage = cardElement.querySelector('.event-image');
-                eventImage.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)), url(${event.target.result})`;
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-    input.click();
-}
+document.querySelectorAll('.why-exist-image').forEach(whyExistImage => {
+    const video = whyExistImage.querySelector('video');
+    if (video) {
+        whyExistImage.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        whyExistImage.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    }
+});
+
+document.querySelectorAll('.profile-video').forEach(profileVideoSection => {
+    const video = profileVideoSection.querySelector('.profile-video-background');
+    if (video) {
+        profileVideoSection.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        profileVideoSection.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    }
+});
+
+
+
+
 
 // Active nav link on scroll
 window.addEventListener('scroll', () => {
