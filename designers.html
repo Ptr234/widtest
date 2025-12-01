@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designers - Women in Design Uganda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="designers.html" class="active">DESIGNERS</a>
+            <a href="suppliers.html">SUPPLIERS</a>
+            <a href="programs.html">PROGRAMS</a>
+            <a href="index.html#events">EVENTS</a>
+            <a href="about.html">ABOUT</a>
+        </div>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn btn-outline">LOGIN</a>
+            <a href="join-wid.html" class="btn btn-primary">JOIN WID</a>
+        </div>
+    </nav>
+
+    <section class="section-light">
+        <div class="members-container">
+            <h2>Our Talented<br>Designers</h2>
+            <p class="members-intro">Browse through profiles of Uganda's leading women designers across various specialties. Filter by expertise, location, and more.</p>
+            <div class="carousel">
+                <button class="carousel-button prev" onclick="slideCarousel(-1)">‹</button>
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="member-card">
+                        <img class="member-image" src="images/designer-sophia.jpg" alt="Sophia Nyanzi">
+                        <div class="member-info">
+                            <p class="member-id">WID-001</p>
+                            <h3>Sophia<br>Nyanzi</h3>
+                            <p class="member-role">Interior Designer</p>
+                            <p class="member-company">Takai Spaces</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <img class="member-image" src="images/designer-sharon.jpg" alt="Sharon Tumusiime">
+                        <div class="member-info">
+                            <p class="member-id">WID-002</p>
+                            <h3>Sharon<br>Tumusiime</h3>
+                            <p class="member-role">Interior Designer</p>
+                            <p class="member-company">PALIT Woodwork & Design</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <img class="member-image" src="images/designer-rachael.jpg" alt="Rachael Baine">
+                        <div class="member-info">
+                            <p class="member-id">WID-003</p>
+                            <h3>Rachael Baine<br>Nkunziza</h3>
+                            <p class="member-role">Principal Interior Designer</p>
+                            <p class="member-company">UUMBAJI DESIGN STUDIO</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <img class="member-image" src="images/designer-grace.jpg" alt="Grace Linda">
+                        <div class="member-info">
+                            <p class="member-id">WID-004</p>
+                            <h3>Grace Linda<br>Nabatanzi B.</h3>
+                            <p class="member-role">Interior Designer</p>
+                            <p class="member-company">Takai Spaces</p>
+                        </div>
+                    </div>
+                    <!-- Duplicates for carousel -->
+                    <div class="member-card">
+                        <img class="member-image" src="images/designer-sophia.jpg" alt="Sophia Nyanzi">
+                        <div class="member-info">
+                            <p class="member-id">WID-001</p>
+                            <h3>Sophia<br>Nyanzi</h3>
+                            <p class="member-role">Interior Designer</p>
+                            <p class="member-company">Takai Spaces</p>
+                        </div>
+                    </div>
+                    <div class="member-card">
+                        <img class="member-image" src="images/designer-sharon.jpg" alt="Sharon Tumusiime">
+                        <div class="member-info">
+                            <p class="member-id">WID-002</p>
+                            <h3>Sharon<br>Tumusiime</h3>
+                            <p class="member-role">Interior Designer</p>
+                            <p class="member-company">PALIT Woodwork & Design</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-button next" onclick="slideCarousel(1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-newsletter">
+                    <div class="footer-logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="footer-logo-img"></div>
+                    <h3>Subscribe to our newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email">
+                    </form>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick links</h3>
+                        <ul>
+                            <li><a href="designers.html">Find Designers</a></li>
+                            <li><a href="suppliers.html">Connect to Suppliers</a></li>
+                            <li><a href="index.html#events">Annual Events</a></li>
+                            <li><a href="programs.html">Our Programs</a></li>
+                            <li><a href="join-wid.html">Become a Memeber</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Social Links</h3>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">X/Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2025 Copyrights to Women in Design</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
