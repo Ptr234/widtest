@@ -51,8 +51,7 @@
                             placeholder="your@example.com" 
                             required
                             aria-describedby="email-error"
-                            autocomplete="email"
-                            loading="lazy">
+                            autocomplete="email">
                         <span id="email-error" class="form-error" role="alert"></span>
                     </div>
 
@@ -85,46 +84,6 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="designers.html">Designers</a></li>
-                    <li><a href="suppliers.html">Suppliers</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <ul>
-                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Women in Design Uganda. All rights reserved.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -132,8 +91,14 @@
                 <div class="footer-newsletter">
                     <div class="footer-logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="footer-logo-img"></div>
                     <h3>Subscribe to our newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Email">
+                    <form class="newsletter-form" method="POST" action="/subscribe" aria-label="Newsletter subscription">
+                        <input 
+                            type="email" 
+                            placeholder="Email" 
+                            required
+                            aria-label="Enter your email for newsletter"
+                            autocomplete="email">
+                        <button type="submit" class="btn btn-primary" style="border-radius: 0 50px 50px 0; padding: 1rem 2rem;">Subscribe</button>
                     </form>
                 </div>
                 <div class="footer-links">
@@ -144,20 +109,20 @@
                             <li><a href="suppliers.html">Connect to Suppliers</a></li>
                             <li><a href="index.html#events">Annual Events</a></li>
                             <li><a href="programs.html">Our Programs</a></li>
-                            <li><a href="join-wid.html">Become a Memeber</a></li>
+                            <li><a href="join-wid.html">Become a Member</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h3>Social Links</h3>
                         <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">X/Twitter</a></li>
+                            <li><a href="https://www.instagram.com/womenindesiuganda" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://www.twitter.com/widuganda" target="_blank" rel="noopener noreferrer">X/Twitter</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>2025 Copyrights to Women in Design</p>
+                <p>&copy; 2025 Women in Design Uganda. All rights reserved.</p>
             </div>
         </div>
     </footer>

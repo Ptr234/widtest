@@ -3,76 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Women in Design Uganda's mission to empower and celebrate female design professionals in Uganda and beyond.">
+    <meta name="theme-color" content="#a8c4b5">
     <title>About Us - Women in Design Uganda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
-        <div class="nav-links">
-            <a href="index.html">HOME</a>
-            <a href="designers.html">DESIGNERS</a>
-            <a href="suppliers.html">SUPPLIERS</a>
-            <a href="programs.html">PROGRAMS</a>
-            <a href="index.html#events">EVENTS</a>
-            <a href="about.html" class="active">ABOUT</a>
-        </div>
-        <div class="auth-buttons">
-            <a href="login.html" class="btn btn-outline">LOGIN</a>
-            <a href="join-wid.html" class="btn btn-primary">JOIN WID</a>
-        </div>
-    </nav>
-
-    <section class="why-exist-section section-light">
-        <div class="why-exist">
-            <div class="why-exist-image">
-                <img src="images/why-we-exist.jpg" alt="Team Photo">
-                <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; pointer-events: all;" onclick="event.stopPropagation(); playVideo('why-exist-video');"></div>
-                <div class="logo-badge">WID</div>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <!-- Navigation -->
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" aria-label="Home page">HOME</a>
+                <a href="designers.html" aria-label="Browse designers">DESIGNERS</a>
+                <a href="suppliers.html" aria-label="Browse suppliers">SUPPLIERS</a>
+                <a href="programs.html" aria-label="Our programs">PROGRAMS</a>
+                <a href="portfolio.html" aria-label="Featured projects">PORTFOLIO</a>
+                <a href="events.html" aria-label="Upcoming events">EVENTS</a>
+                <a href="about.html" aria-current="page" aria-label="Current page: About us">ABOUT</a>
             </div>
-            <div class="why-exist-content">
-                <h2>About<br>Women in Design Uganda</h2>
-                <p>Women in Design Uganda was created to close the visibility and access gap for female professionals in the design industry. Despite their talent and drive, many women in architecture, interior design, graphic design, and related fields remain underrepresented in projects, partnerships, and leadership.</p>
-                <p>By spotlighting local talent and building a trusted design ecosystem, we're changing the narrative, one collaboration at a time.</p>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline" aria-label="Login to your account">LOGIN</a>
+                <a href="join-wid.html" class="btn btn-primary" aria-label="Join Women in Design">JOIN WID</a>
             </div>
-        </div>
-    </section>
+        </nav>
+    </header>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-newsletter">
-                    <div class="footer-logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="footer-logo-img"></div>
-                    <h3>Subscribe to our newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Email">
+    <main id="main-content">
+        <section class="why-exist-section section-light">
+            <div class="why-exist">
+                <div class="why-exist-image">
+                    <img src="images/why-we-exist.jpg" alt="Women in Design Uganda team members collaborating on a design project" loading="lazy">
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; pointer-events: all;" role="button" aria-label="Play video about Women in Design Uganda"></div>
+                    <div class="logo-badge">WID</div>
+                </div>
+                <div class="why-exist-content">
+                    <h1>About Women in Design Uganda</h1>
+                    <p>Women in Design Uganda was created to close the visibility and access gap for female professionals in the design industry. Despite their talent and drive, many women in architecture, interior design, graphic design, and related fields remain underrepresented in projects, partnerships, and leadership.</p>
+                    <p>By spotlighting local talent and building a trusted design ecosystem, we're changing the narrative, one collaboration at a time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values -->
+        <section class="mission-section section-white">
+            <div class="mission-container">
+                <h2>Our Mission, Vision & Values</h2>
+                <div class="mvv-grid">
+                    <div class="mvv-card">
+                        <div class="mvv-icon">🎯</div>
+                        <h3>Mission</h3>
+                        <p>To empower and connect women designers across Uganda by providing visibility, resources, mentorship, and opportunities for professional growth and collaboration.</p>
+                    </div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">🌟</div>
+                        <h3>Vision</h3>
+                        <p>A thriving design ecosystem where women designers are recognized leaders, innovators, and equal partners in shaping Uganda's built environment.</p>
+                    </div>
+                    <div class="mvv-card">
+                        <div class="mvv-icon">💎</div>
+                        <h3>Core Values</h3>
+                        <ul>
+                            <li>Empowerment & Equality</li>
+                            <li>Excellence & Innovation</li>
+                            <li>Community & Collaboration</li>
+                            <li>Integrity & Transparency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section section-light">
+            <div class="team-container">
+                <h2>Meet Our Leadership Team</h2>
+                <p class="team-intro">Our team is composed of passionate design professionals committed to advancing women in design.</p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="images/team-member-1.jpg" alt="Jane Nakamatte, Founder and Executive Director" loading="lazy">
+                        <h3>Jane Nakamatte</h3>
+                        <p class="role">Founder & Executive Director</p>
+                        <p class="bio">Interior designer with 15+ years of experience leading design projects across East Africa.</p>
+                        <div class="member-social">
+                            <a href="#" aria-label="Jane's LinkedIn profile">📘</a>
+                            <a href="#" aria-label="Jane's Twitter profile">🐦</a>
+                            <a href="#" aria-label="Email Jane">✉️</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/team-member-2.jpg" alt="Grace Mukwaya, Programs Manager" loading="lazy">
+                        <h3>Grace Mukwaya</h3>
+                        <p class="role">Programs Manager</p>
+                        <p class="bio">Experienced in program development and community engagement for creative industries.</p>
+                        <div class="member-social">
+                            <a href="#" aria-label="Grace's LinkedIn profile">📘</a>
+                            <a href="#" aria-label="Grace's Twitter profile">🐦</a>
+                            <a href="#" aria-label="Email Grace">✉️</a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="images/team-member-3.jpg" alt="Amina Hassan, Community Manager" loading="lazy">
+                        <h3>Amina Hassan</h3>
+                        <p class="role">Community Manager</p>
+                        <p class="bio">Passionate about building inclusive communities and supporting emerging designers.</p>
+                        <div class="member-social">
+                            <a href="#" aria-label="Amina's LinkedIn profile">📘</a>
+                            <a href="#" aria-label="Amina's Twitter profile">🐦</a>
+                            <a href="#" aria-label="Email Amina">✉️</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="achievements-section section-gray">
+            <div class="achievements-container">
+                <h2>Our Achievements</h2>
+                <div class="achievement-stats">
+                    <div class="stat">
+                        <div class="stat-number">150+</div>
+                        <p>Women Designers Connected</p>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">200+</div>
+                        <p>Supplier Partners</p>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <p>Projects Facilitated</p>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10K+</div>
+                        <p>Lives Impacted</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section-white">
+            <div class="contact-container">
+                <h2>Get In Touch</h2>
+                <p class="contact-intro">Have questions? We'd love to hear from you. Contact us using the information below or fill out the form.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <h4>📍 Address</h4>
+                            <p>Kampala, Uganda<br>Women in Design Uganda Hub</p>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>📱 Phone</h4>
+                            <a href="tel:+256700000000">+256 700 000 000</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>✉️ Email</h4>
+                            <a href="mailto:info@womenindignuganda.org">info@womenindignuganda.org</a>
+                        </div>
+
+                        <div class="contact-item">
+                            <h4>🌐 Social Media</h4>
+                            <div class="social-links">
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" method="POST" action="/contact" novalidate aria-label="Contact form">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="contact-name" 
+                                name="name" 
+                                required
+                                aria-describedby="name-error"
+                                autocomplete="name">
+                            <span id="name-error" class="form-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input 
+                                type="email" 
+                                id="contact-email" 
+                                name="email" 
+                                required
+                                aria-describedby="email-error"
+                                autocomplete="email">
+                            <span id="email-error" class="form-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input 
+                                type="text" 
+                                id="contact-subject" 
+                                name="subject" 
+                                required
+                                aria-describedby="subject-error">
+                            <span id="subject-error" class="form-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea 
+                                id="contact-message" 
+                                name="message" 
+                                rows="5" 
+                                required
+                                aria-describedby="message-error"></textarea>
+                            <span id="message-error" class="form-error" role="alert"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
                     </form>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h3>Quick links</h3>
-                        <ul>
-                            <li><a href="designers.html">Find Designers</a></li>
-                            <li><a href="suppliers.html">Connect to Suppliers</a></li>
-                            <li><a href="index.html#events">Annual Events</a></li>
-                            <li><a href="programs.html">Our Programs</a></li>
-                            <li><a href="join-wid.html">Become a Memeber</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Social Links</h3>
-                        <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">X/Twitter</a></li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-            <div class="footer-bottom">
-                <p>2025 Copyrights to Women in Design</p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designers.html">Designers</a></li>
+                    <li><a href="suppliers.html">Suppliers</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Women in Design Uganda. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 

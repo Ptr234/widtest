@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover upcoming events, workshops, and networking opportunities with Women in Design Uganda.">
+    <meta name="theme-color" content="#a8c4b5">
+    <title>Events - Women in Design Uganda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <!-- Navigation -->
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" aria-label="Home page">HOME</a>
+                <a href="designers.html" aria-label="Browse designers">DESIGNERS</a>
+                <a href="suppliers.html" aria-label="Browse suppliers">SUPPLIERS</a>
+                <a href="programs.html" aria-label="Our programs">PROGRAMS</a>
+                <a href="portfolio.html" aria-label="Featured projects">PORTFOLIO</a>
+                <a href="events.html" aria-current="page" aria-label="Current page: Events">EVENTS</a>
+                <a href="about.html" aria-label="About us">ABOUT</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline" aria-label="Login to your account">LOGIN</a>
+                <a href="join-wid.html" class="btn btn-primary" aria-label="Join Women in Design">JOIN WID</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="events-hero section-light">
+            <div class="events-hero-content">
+                <h1>Upcoming Events</h1>
+                <p class="events-hero-subtitle">Stay connected with Uganda's vibrant design community. Our events bring together creatives, collaborators, and changemakers from across the country.</p>
+            </div>
+        </section>
+
+        <!-- Events Calendar Filter -->
+        <section class="events-filter-section section-white">
+            <div class="events-filter-container">
+                <div class="filter-group">
+                    <label for="eventMonth">Filter by Month:</label>
+                    <select id="eventMonth" class="filter-select" aria-label="Filter events by month">
+                        <option value="">All Months</option>
+                        <option value="november">November 2025</option>
+                        <option value="december">December 2025</option>
+                        <option value="january">January 2026</option>
+                        <option value="february">February 2026</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="eventType">Filter by Type:</label>
+                    <select id="eventType" class="filter-select" aria-label="Filter events by type">
+                        <option value="">All Types</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="networking">Networking</option>
+                        <option value="tour">Factory Tour</option>
+                        <option value="conference">Conference</option>
+                        <option value="meetup">Meet & Greet</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline" aria-label="Clear all filters">Clear Filters</button>
+            </div>
+        </section>
+
+        <!-- Featured Events -->
+        <section class="featured-events section-gray">
+            <div class="featured-events-container">
+                <h2>Featured Events</h2>
+                <div class="featured-events-grid">
+                    <article class="featured-event-card">
+                        <div class="event-image-large" style="background-image: linear-gradient(135deg, rgba(168, 196, 181, 0.8), rgba(74, 94, 84, 0.8)), url('images/event-workshop.jpg');" role="img" aria-label="WID Design Workshop">
+                            <span class="event-badge">Workshop</span>
+                        </div>
+                        <div class="event-card-content">
+                            <h3>WID Design Workshop</h3>
+                            <p class="event-date">📅 12th November 2025</p>
+                            <p class="event-time">🕐 9:00 AM - 4:00 PM</p>
+                            <p class="event-location">📍 WID Hub, Kampala</p>
+                            <p class="event-description">Join us for an intensive workshop on contemporary interior design trends. Learn from experienced professionals and network with peers.</p>
+                            <div class="event-meta">
+                                <span class="attendees">👥 150+ Attendees</span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-full">Register Now</a>
+                        </div>
+                    </article>
+
+                    <article class="featured-event-card">
+                        <div class="event-image-large" style="background-image: linear-gradient(135deg, rgba(168, 196, 181, 0.8), rgba(74, 94, 84, 0.8)), url('images/event-networking.jpg');" role="img" aria-label="Tile Factory Tour">
+                            <span class="event-badge">Factory Tour</span>
+                        </div>
+                        <div class="event-card-content">
+                            <h3>Premium Tile Factory Tour</h3>
+                            <p class="event-date">📅 12th January 2026</p>
+                            <p class="event-time">🕐 10:00 AM - 2:00 PM</p>
+                            <p class="event-location">📍 Jinja Industrial Zone</p>
+                            <p class="event-description">Explore Uganda's leading tile manufacturing facility. See behind-the-scenes production and connect with suppliers directly.</p>
+                            <div class="event-meta">
+                                <span class="attendees">👥 50 Attendees (Limited)</span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-full">Register Now</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Events Grid -->
+        <section class="all-events section-white">
+            <div class="all-events-container">
+                <h2>All Events</h2>
+                <div class="events-list-grid" id="eventsGrid">
+                    <!-- Event 1 -->
+                    <article class="event-list-item" data-month="november" data-type="workshop">
+                        <div class="event-header">
+                            <div class="event-date-box">
+                                <span class="day">12</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="event-title-section">
+                                <h3>WID Design Workshop</h3>
+                                <span class="event-type-badge">Workshop</span>
+                            </div>
+                        </div>
+                        <p class="event-time">🕐 9:00 AM - 4:00 PM</p>
+                        <p class="event-location">📍 WID Hub, Kampala</p>
+                        <p class="event-description">Learn contemporary design trends and techniques from industry experts. Perfect for designers looking to expand their skillset.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                    </article>
+
+                    <!-- Event 2 -->
+                    <article class="event-list-item" data-month="january" data-type="tour">
+                        <div class="event-header">
+                            <div class="event-date-box">
+                                <span class="day">12</span>
+                                <span class="month">JAN</span>
+                            </div>
+                            <div class="event-title-section">
+                                <h3>Premium Tile Factory Tour</h3>
+                                <span class="event-type-badge">Factory Tour</span>
+                            </div>
+                        </div>
+                        <p class="event-time">🕐 10:00 AM - 2:00 PM</p>
+                        <p class="event-location">📍 Jinja Industrial Zone</p>
+                        <p class="event-description">Discover premium tile manufacturing processes. Network with suppliers and learn about new material innovations.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                    </article>
+
+                    <!-- Event 3 -->
+                    <article class="event-list-item" data-month="november" data-type="conference">
+                        <div class="event-header">
+                            <div class="event-date-box">
+                                <span class="day">15</span>
+                                <span class="month">NOV</span>
+                            </div>
+                            <div class="event-title-section">
+                                <h3>Design Industry Conference</h3>
+                                <span class="event-type-badge">Conference</span>
+                            </div>
+                        </div>
+                        <p class="event-time">🕐 8:30 AM - 5:00 PM</p>
+                        <p class="event-location">📍 Serena Hotel, Kampala</p>
+                        <p class="event-description">A full-day conference featuring keynote speakers, panel discussions, and workshops on design innovation and business growth.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                    </article>
+
+                    <!-- Event 4 -->
+                    <article class="event-list-item" data-month="december" data-type="meetup">
+                        <div class="event-header">
+                            <div class="event-date-box">
+                                <span class="day">12</span>
+                                <span class="month">DEC</span>
+                            </div>
+                            <div class="event-title-section">
+                                <h3>WID Member Meet & Greet</h3>
+                                <span class="event-type-badge">Meet & Greet</span>
+                            </div>
+                        </div>
+                        <p class="event-time">🕐 5:00 PM - 8:00 PM</p>
+                        <p class="event-location">📍 The Nook Café, Kampala</p>
+                        <p class="event-description">A casual gathering for members to network, share projects, and build meaningful connections with fellow designers and suppliers.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                    </article>
+
+                    <!-- Event 5 -->
+                    <article class="event-list-item" data-month="february" data-type="workshop">
+                        <div class="event-header">
+                            <div class="event-date-box">
+                                <span class="day">08</span>
+                                <span class="month">FEB</span>
+                            </div>
+                            <div class="event-title-section">
+                                <h3>Digital Marketing for Designers</h3>
+                                <span class="event-type-badge">Workshop</span>
+                            </div>
+                        </div>
+                        <p class="event-time">🕐 10:00 AM - 1:00 PM</p>
+                        <p class="event-location">📍 WID Hub, Kampala</p>
+                        <p class="event-description">Master social media marketing, portfolio building, and online branding strategies to grow your design business.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                    </article>
+
+                    <!-- Event 6 -->
+                    <article class="event-list-item" data-month="january" data-type="networking">
+                        <div class="event-header">
+                            <div class="event-date-box">
+                                <span class="day">25</span>
+                                <span class="month">JAN</span>
+                            </div>
+                            <div class="event-title-section">
+                                <h3>Designer-Supplier Networking Session</h3>
+                                <span class="event-type-badge">Networking</span>
+                            </div>
+                        </div>
+                        <p class="event-time">🕐 3:00 PM - 6:00 PM</p>
+                        <p class="event-location">📍 Kampala Serena Hotel</p>
+                        <p class="event-description">Connect with suppliers, discuss material sourcing, and build partnerships for your upcoming projects.</p>
+                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-section section-light">
+            <div class="newsletter-container">
+                <h2>Never Miss an Event</h2>
+                <p>Subscribe to our newsletter and stay updated on all upcoming WID events and opportunities.</p>
+                <form class="newsletter-form" novalidate aria-label="Event newsletter signup">
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            required
+                            aria-label="Email address"
+                            autocomplete="email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designers.html">Designers</a></li>
+                    <li><a href="suppliers.html">Suppliers</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Women in Design Uganda. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

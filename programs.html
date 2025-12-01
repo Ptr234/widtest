@@ -3,94 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our impactful programs designed to support, educate, and elevate women in the design industry through mentorship, workshops, and networking.">
+    <meta name="theme-color" content="#a8c4b5">
     <title>Programs - Women in Design Uganda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
-        <div class="nav-links">
-            <a href="index.html">HOME</a>
-            <a href="designers.html">DESIGNERS</a>
-            <a href="suppliers.html">SUPPLIERS</a>
-            <a href="programs.html" class="active">PROGRAMS</a>
-            <a href="index.html#events">EVENTS</a>
-            <a href="about.html">ABOUT</a>
-        </div>
-        <div class="auth-buttons">
-            <a href="login.html" class="btn btn-outline">LOGIN</a>
-            <a href="join-wid.html" class="btn btn-primary">JOIN WID</a>
-        </div>
-    </nav>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <!-- Navigation -->
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="header-logo"></div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" aria-label="Home page">HOME</a>
+                <a href="designers.html" aria-label="Browse designers">DESIGNERS</a>
+                <a href="suppliers.html" aria-label="Browse suppliers">SUPPLIERS</a>
+                <a href="programs.html" aria-current="page" aria-label="Current page: Programs">PROGRAMS</a>
+                <a href="portfolio.html" aria-label="Featured projects">PORTFOLIO</a>
+                <a href="events.html" aria-label="Upcoming events">EVENTS</a>
+                <a href="about.html" aria-label="About us">ABOUT</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline" aria-label="Login to your account">LOGIN</a>
+                <a href="join-wid.html" class="btn btn-primary" aria-label="Join Women in Design">JOIN WID</a>
+            </div>
+        </nav>
+    </header>
 
-    <section class="section-light">
-        <div class="members-container">
-            <h2>Our Impactful<br>Programs</h2>
-            <p class="members-intro">We offer a range of programs designed to support, educate, and elevate women in the design industry.</p>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-content">
+    <main id="main-content">
+        <section class="section-light">
+            <div class="members-container">
+                <h1>Our Impactful Programs</h1>
+                <p class="members-intro">We offer a range of programs designed to support, educate, and elevate women in the design industry.</p>
+                
+                <!-- Programs Grid with Details -->
+                <div class="programs-grid">
+                    <article class="program-card">
+                        <div class="program-icon">🤝</div>
                         <h3>Mentorship Program</h3>
-                        <p>Connect with experienced design professionals for guidance and career development.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
+                        <p class="program-description">Connect with experienced design professionals for guidance and career development.</p>
+                        <ul class="program-benefits">
+                            <li>✓ One-on-one mentoring sessions</li>
+                            <li>✓ Career development planning</li>
+                            <li>✓ Industry connections</li>
+                            <li>✓ Project collaboration opportunities</li>
+                        </ul>
+                        <div class="program-meta">
+                            <span class="program-duration">📅 6-12 months</span>
+                            <span class="program-status">Active</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Enroll Now</button>
+                    </article>
+
+                    <article class="program-card">
+                        <div class="program-icon">🎓</div>
                         <h3>Workshop Series</h3>
-                        <p>Hands-on workshops to enhance your skills and learn new design techniques.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
+                        <p class="program-description">Hands-on workshops to enhance your skills and learn new design techniques.</p>
+                        <ul class="program-benefits">
+                            <li>✓ Hands-on training sessions</li>
+                            <li>✓ Industry expert instructors</li>
+                            <li>✓ Certificate upon completion</li>
+                            <li>✓ Networking opportunities</li>
+                        </ul>
+                        <div class="program-meta">
+                            <span class="program-duration">📅 Monthly</span>
+                            <span class="program-status">Active</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">View Schedule</button>
+                    </article>
+
+                    <article class="program-card">
+                        <div class="program-icon">🌐</div>
                         <h3>Networking Events</h3>
-                        <p>Opportunities to connect with peers, clients, and industry leaders.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
+                        <p class="program-description">Opportunities to connect with peers, clients, and industry leaders.</p>
+                        <ul class="program-benefits">
+                            <li>✓ Monthly networking mixers</li>
+                            <li>✓ Industry conferences</li>
+                            <li>✓ Client pitching events</li>
+                            <li>✓ Collaboration opportunities</li>
+                        </ul>
+                        <div class="program-meta">
+                            <span class="program-duration">📅 Weekly/Monthly</span>
+                            <span class="program-status">Active</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">RSVP</button>
+                    </article>
+
+                    <article class="program-card">
+                        <div class="program-icon">🏗️</div>
                         <h3>Community Projects</h3>
-                        <p>Collaborate on projects that make a real difference in our community.</p>
-                    </div>
+                        <p class="program-description">Collaborate on projects that make a real difference in our community.</p>
+                        <ul class="program-benefits">
+                            <li>✓ Real-world project experience</li>
+                            <li>✓ Community impact</li>
+                            <li>✓ Portfolio building</li>
+                            <li>✓ Team collaboration</li>
+                        </ul>
+                        <div class="program-meta">
+                            <span class="program-duration">📅 Ongoing</span>
+                            <span class="program-status">Active</span>
+                        </div>
+                        <button class="btn btn-primary btn-full">Get Involved</button>
+                    </article>
                 </div>
+
+                <!-- Program Details Section -->
+                <section class="program-details-section">
+                    <h2>Program Details & Schedule</h2>
+                    <div class="program-details-grid">
+                        <div class="detail-card">
+                            <h4>Mentorship Program</h4>
+                            <p><strong>Duration:</strong> 6-12 months</p>
+                            <p><strong>Frequency:</strong> Bi-weekly sessions</p>
+                            <p><strong>Cost:</strong> Free for members</p>
+                            <p><strong>Requirements:</strong> Portfolio and application form</p>
+                            <a href="#" class="btn btn-outline btn-small">Learn More</a>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Workshop Series</h4>
+                            <p><strong>Duration:</strong> 4-5 hours per session</p>
+                            <p><strong>Frequency:</strong> Monthly workshops</p>
+                            <p><strong>Cost:</strong> UGX 50,000 per member / UGX 80,000 non-member</p>
+                            <p><strong>Topics:</strong> Design trends, software skills, business</p>
+                            <a href="#" class="btn btn-outline btn-small">View Schedule</a>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Networking Events</h4>
+                            <p><strong>Duration:</strong> 2-3 hours</p>
+                            <p><strong>Frequency:</strong> Bi-weekly/Monthly</p>
+                            <p><strong>Cost:</strong> Free for members</p>
+                            <p><strong>Location:</strong> Various venues in Kampala</p>
+                            <a href="#" class="btn btn-outline btn-small">View Events</a>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Community Projects</h4>
+                            <p><strong>Duration:</strong> Varies by project</p>
+                            <p><strong>Frequency:</strong> Ongoing</p>
+                            <p><strong>Cost:</strong> Minimal (materials only)</p>
+                            <p><strong>Impact:</strong> Local community transformation</p>
+                            <a href="#" class="btn btn-outline btn-small">Current Projects</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Testimonials Section -->
+                <section class="testimonials-section">
+                    <h2>What Members Say</h2>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The mentorship program transformed my career. I gained invaluable insights and connections that led to bigger projects."</p>
+                            <p class="testimonial-author">- Sophia Nyanzi, Interior Designer</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The workshops have been incredibly valuable. I learned cutting-edge design techniques and stayed updated with industry trends."</p>
+                            <p class="testimonial-author">- Sharon Tumusiime, Designer</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Through networking events, I've met clients, collaborators, and friends. The WID community is truly supportive."</p>
+                            <p class="testimonial-author">- Rachael Baine, Principal Designer</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designers.html">Designers</a></li>
+                    <li><a href="suppliers.html">Suppliers</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-newsletter">
-                    <div class="footer-logo"><img src="images/logo.webp" alt="Women in Design Uganda Logo" class="footer-logo-img"></div>
-                    <h3>Subscribe to our newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Email">
-                    </form>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h3>Quick links</h3>
-                        <ul>
-                            <li><a href="designers.html">Find Designers</a></li>
-                            <li><a href="suppliers.html">Connect to Suppliers</a></li>
-                            <li><a href="index.html#events">Annual Events</a></li>
-                            <li><a href="programs.html">Our Programs</a></li>
-                            <li><a href="join-wid.html">Become a Memeber</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Social Links</h3>
-                        <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">X/Twitter</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>2025 Copyrights to Women in Design</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Women in Design Uganda. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 
