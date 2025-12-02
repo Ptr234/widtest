@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -464,6 +465,7 @@ nav {
 
 .hero p {
     font-size: 1.25rem;
+    color: #2d3e36;
     margin-bottom: 2.5rem;
     opacity: 0.98;
     max-width: 100%;
@@ -932,7 +934,7 @@ h4 {
     height: 100%;
     min-height: 300px;
     background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.4)),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%237a8a82" width="400" height="300"/></svg>');
+                url('images/event-workshop.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1252,6 +1254,7 @@ h4 {
 .member-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border-color: rgba(168, 196, 181, 0.3);
 }
 
 .member-image {
@@ -2151,6 +2154,7 @@ footer {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
 .program-benefits {
@@ -3373,6 +3377,11 @@ footer {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+.featured-article-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
 .featured-article-image {
     height: 400px;
     overflow: hidden;
@@ -3620,5 +3629,201 @@ footer {
 
     .contact-form {
         padding: 1.5rem;
+    }
+}
+/* Styles extracted from members.html */
+
+.body-members {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667a7a 0%, #8a9a9a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.members-container-main {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto; /* Center the main container */
+}
+
+.members-hero-section {
+    text-align: center; /* Center text within the hero section */
+    margin-bottom: 60px;
+    /* Removed padding-left: 20px; as it conflicts with centering */
+}
+
+.members-hero-section p {
+    font-size: 1.2rem;
+    color: #2d3e36;
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0 auto 20px auto; /* Center the paragraph and add bottom margin */
+}
+
+.members-carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 80px;
+}
+
+.members-carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.member-card-new {
+    min-width: calc(25% - 20px);
+    margin: 0 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.member-card-new:hover {
+    transform: translateY(-10px);
+}
+
+.member-image-new {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.member-info-new {
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #4a5858 0%, #3a4848 100%);
+    color: white;
+}
+
+.member-name-new {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.member-title-new {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.member-company-new {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.members-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #4a5858;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.members-nav-button:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.members-nav-button.prev {
+    left: 10px;
+}
+
+.members-nav-button.next {
+    right: 10px;
+}
+
+.dots-container-new {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.dot-new {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot-new.active {
+    background: white;
+    width: 40px;
+    border-radius: 6px;
+}
+
+.btn-view-portfolio {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #b8d4d4; /* A light teal/blue, matching hero H1 */
+    color: #3a4848; /* Dark text for contrast */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-view-portfolio:hover {
+    background-color: #8a9a9a; /* Darker on hover */
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+    .member-card-new {
+        min-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .members-hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .members-hero-section p {
+        font-size: 1rem;
+    }
+
+    .member-card-new {
+        min-width: calc(50% - 20px);
+    }
+
+    .members-carousel-container {
+        padding: 0 60px;
+    }
+
+    .members-nav-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .member-card-new {
+        min-width: calc(100% - 20px);
     }
 }

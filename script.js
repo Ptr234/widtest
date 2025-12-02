@@ -369,3 +369,84 @@ document.addEventListener('DOMContentLoaded', () => {
     setupDesignerFilter();
     setupSupplierFilter();
 });
+
+// Members page carousel functionality
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    const carouselWrapper = document.getElementById('membersCarousel');
+    const memberCards = document.querySelectorAll('.member-card-new');
+    const totalMemberCards = memberCards.length;
+    let cardsPerView = 4;
+
+    function updateMembersCardsPerView() {
+        if (window.innerWidth <= 480) {
+            cardsPerView = 1;
+        } else if (window.innerWidth <= 768) {
+            cardsPerView = 2;
+        } else if (window.innerWidth <= 1200) {
+            cardsPerView = 3;
+        } else {
+            cardsPerView = 4;
+        }
+    }
+
+    function createMemberDots() {
+        const dotsContainer = document.getElementById('membersDots');
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        const totalDots = Math.ceil(totalMemberCards / cardsPerView);
+        
+        for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot-new';
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => goToMemberSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateMemberDots() {
+        const dots = document.querySelectorAll('.dot-new');
+        const activeDotIndex = Math.floor(currentIndex / cardsPerView);
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeDotIndex);
+        });
+    }
+
+    window.moveMembersCarousel = function(direction) { // Expose globally for onclick
+        currentIndex += direction;
+        const maxIndex = totalMemberCards - cardsPerView;
+        
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        } else if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        
+        updateMemberCarousel();
+    }
+
+    function goToMemberSlide(slideIndex) {
+        currentIndex = slideIndex * cardsPerView;
+        updateMemberCarousel();
+    }
+
+    function updateMemberCarousel() {
+        if (!memberCards[0]) return;
+        const cardWidth = memberCards[0].offsetWidth + 20; // 20px for left and right margin of 10px each
+        carouselWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        updateMemberDots();
+    }
+
+    window.addEventListener('resize', () => {
+        updateMembersCardsPerView();
+        createMemberDots();
+        currentIndex = 0; // Reset carousel position on resize
+        updateMemberCarousel();
+    });
+
+    // Initial setup
+    updateMembersCardsPerView();
+    createMemberDots();
+    updateMemberCarousel(); // Call once to set initial position and dots
+});
