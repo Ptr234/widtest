@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover trusted suppliers for design and construction needs. Browse verified vendors for furniture, fabrics, lighting, and materials.">
+    <meta name="theme-color" content="#a8c4b5">
+    <title>Suppliers - Women in Design Uganda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <header role="banner">
+        <!-- Navigation -->
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="logo"><img src="images/LOGO.png" alt="Women in Design Uganda Logo" class="header-logo"></div>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html" aria-label="Home page">HOME</a>
+                <a href="designers.html" aria-label="Browse designers">DESIGNERS</a>
+                <a href="suppliers.html" aria-current="page" aria-label="Current page: Suppliers">SUPPLIERS</a>
+                <a href="programs.html" aria-label="Our programs">PROGRAMS</a>
+                <a href="portfolio.html" aria-label="Featured projects">PORTFOLIO</a>
+                <a href="events.html" aria-label="Upcoming events">EVENTS</a>
+                <a href="about.html" aria-label="About us">ABOUT</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn btn-outline" aria-label="Login to your account">LOGIN</a>
+                <a href="join-wid.html" class="btn btn-primary" aria-label="Join Women in Design">JOIN WID</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="section-light">
+            <div class="members-container">
+                <h1>Our Trusted Suppliers</h1>
+                <p class="members-intro">Discover a curated network of reliable suppliers for all your design and construction needs. Explore categories from furniture to finishes.</p>
+                
+                <!-- Search and Filter Section -->
+                <div class="search-filter-section">
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="supplierSearch" 
+                            placeholder="Search by company name or product..." 
+                            aria-label="Search suppliers"
+                            class="search-input">
+                        <button class="search-btn" aria-label="Search"><span>🔍</span></button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="categoryFilter">Filter by Category:</label>
+                        <select id="categoryFilter" class="filter-select" aria-label="Filter by product category">
+                            <option value="">All Categories</option>
+                            <option value="fabrics">Fabrics & Textiles</option>
+                            <option value="furniture">Furniture & Decor</option>
+                            <option value="lighting">Lighting Solutions</option>
+                            <option value="timber">Timber & Woodwork</option>
+                            <option value="hardware">Hardware & Fixtures</option>
+                        </select>
+                    </div>
+
+                    <button id="clearSupplierFilters" class="btn btn-outline" aria-label="Clear all filters">Clear Filters</button>
+                </div>
+
+                <!-- Categories Grid -->
+                <div class="supplier-categories">
+                    <h2>Product Categories</h2>
+                    <div class="cards-grid">
+                        <article class="card">
+                            <img class="card-image" src="images/supplier-fabrics.jpg" alt="High-quality fabrics and textiles for interior design projects" loading="lazy">
+                            <div class="card-content">
+                                <h3>Fabrics & Textiles</h3>
+                                <p>Premium fabrics and textiles for upholstery, curtains, and decorative applications.</p>
+                                <a href="#" class="btn btn-outline">Browse →</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img class="card-image" src="images/supplier-furniture.jpg" alt="Premium furniture and decorative pieces for residential and commercial spaces" loading="lazy">
+                            <div class="card-content">
+                                <h3>Furniture & Decor</h3>
+                                <p>Carefully curated furniture and decorative pieces for every design style.</p>
+                                <a href="#" class="btn btn-outline">Browse →</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img class="card-image" src="images/supplier-lighting.jpg" alt="Innovative lighting solutions for contemporary interior design" loading="lazy">
+                            <div class="card-content">
+                                <h3>Lighting Solutions</h3>
+                                <p>Modern and traditional lighting fixtures to illuminate your spaces.</p>
+                                <a href="#" class="btn btn-outline">Browse →</a>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img class="card-image" src="images/supplier-timber.jpg" alt="Quality timber and woodwork materials for design projects" loading="lazy">
+                            <div class="card-content">
+                                <h3>Timber & Woodwork</h3>
+                                <p>Premium timber and custom woodwork services for bespoke designs.</p>
+                                <a href="#" class="btn btn-outline">Browse →</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- All Suppliers Directory -->
+                <div class="suppliers-network">
+                    <h2>All Suppliers</h2>
+                    <div class="suppliers-grid" id="suppliersGrid">
+                        <!-- Suppliers will be populated here -->
+                        <div class="supplier-item">
+                            <h3>Fabrics Uganda Limited</h3>
+                            <p class="supplier-category">Fabrics & Textiles</p>
+                            <p class="supplier-location">📍 Kampala</p>
+                            <p class="supplier-description">Wholesale and retail fabrics including cotton, silk, and synthetic materials.</p>
+                            <div class="supplier-contact">
+                                <a href="tel:+256700000000" class="contact-link">Call</a>
+                                <a href="mailto:info@fabricsuganda.com" class="contact-link">Email</a>
+                                <a href="#" class="contact-link">Website</a>
+                            </div>
+                        </div>
+                        <div class="supplier-item">
+                            <h3>Elite Furniture Co.</h3>
+                            <p class="supplier-category">Furniture & Decor</p>
+                            <p class="supplier-location">📍 Kampala</p>
+                            <p class="supplier-description">Custom and ready-made furniture for homes and offices.</p>
+                            <div class="supplier-contact">
+                                <a href="tel:+256700000001" class="contact-link">Call</a>
+                                <a href="mailto:info@elitefurniture.com" class="contact-link">Email</a>
+                                <a href="#" class="contact-link">Website</a>
+                            </div>
+                        </div>
+                        <div class="supplier-item">
+                            <h3>Bright Light Solutions</h3>
+                            <p class="supplier-category">Lighting Solutions</p>
+                            <p class="supplier-location">📍 Kampala</p>
+                            <p class="supplier-description">LED and traditional lighting fixtures for all applications.</p>
+                            <div class="supplier-contact">
+                                <a href="tel:+256700000002" class="contact-link">Call</a>
+                                <a href="mailto:info@brightlights.com" class="contact-link">Email</a>
+                                <a href="#" class="contact-link">Website</a>
+                            </div>
+                        </div>
+                        <div class="supplier-item">
+                            <h3>Premium Timber Supply</h3>
+                            <p class="supplier-category">Timber & Woodwork</p>
+                            <p class="supplier-location">📍 Jinja</p>
+                            <p class="supplier-description">Quality timber and woodworking services for custom projects.</p>
+                            <div class="supplier-contact">
+                                <a href="tel:+256700000003" class="contact-link">Call</a>
+                                <a href="mailto:info@premiumtimber.com" class="contact-link">Email</a>
+                                <a href="#" class="contact-link">Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designers.html">Designers</a></li>
+                    <li><a href="suppliers.html">Suppliers</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Women in Design Uganda. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
