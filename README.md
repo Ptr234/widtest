@@ -46,8 +46,8 @@ widtest/
 ├── login.html                 # Login page (original)
 ├── login-improved.html        # Login page (enhanced version)
 ├── join-wid.html             # Join/Register page
-├── designers.html            # Designer network
-├── suppliers.html            # Supplier network
+├── designers.html            # Designer directory
+├── suppliers.html            # Supplier directory
 ├── programs.html             # Programs & workshops
 ├── about.html                # About WID
 │

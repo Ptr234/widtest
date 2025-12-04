@@ -227,8 +227,8 @@ All pages have been populated with required fields, access points, and fully fun
 - [x] Error handling
 
 ### ✅ Page Population
-- **Designers**: 4+ featured designers in carousel, 4+ in network grid
-- **Suppliers**: 4 category cards, 4+ suppliers in network
+- **Designers**: 4+ featured designers in carousel, 4+ in directory grid
+- **Suppliers**: 4 category cards, 4+ suppliers in directory
 - **Programs**: 4 program cards, 4 detail cards, 3 testimonials
 - **Team**: 3 team members with photos and bios
 - **Statistics**: 4 key achievement metrics

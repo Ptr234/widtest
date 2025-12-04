@@ -38,7 +38,7 @@ The website has been completely reorganized with proper content distribution acr
 - Search box (by company, products, location)
 - Category filter dropdown (6 categories)
 - Product category showcase cards (4 cards)
-- All suppliers network (4+ suppliers)
+- All suppliers directory (4+ suppliers)
 - Supplier items: name, category, location, description, contact links (phone/email/website)
 - JavaScript live filtering
 **Features**: Responsive, searchable, filterable
@@ -172,7 +172,7 @@ Plus:
 
 ### **Directories & Specialized Pages**
 ✅ Created/Enhanced:
-- **designers.html**: Comprehensive designer network
+- **designers.html**: Comprehensive designer directory
 - **suppliers.html**: Supplier network with filters
 - **portfolio.html**: Featured projects gallery
 - **events.html**: Full events calendar
