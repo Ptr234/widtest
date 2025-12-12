@@ -197,6 +197,7 @@ h2 {
         z-index: 99;
         display: flex; /* Ensure it's a flex container for its children */
         gap: 40px; /* Space between nav-links and auth-buttons in mobile menu */
+        text-align: center; /* Center text within the menu */
     }
 
     .nav-menu.active {
@@ -222,38 +223,167 @@ h2 {
         display: flex; /* Show hamburger on mobile */
     }
 
+    .container {
+        padding: 0 15px; /* Tighter padding on mobile */
+    }
+
+    .section-padding {
+        padding: 60px 0; /* Reduced section padding */
+    }
+
     .hero {
-        height: 75vh;
+        height: 60vh; /* Reduced hero height */
     }
 
     .hero-content {
         margin-left: 0;
         max-width: 100%;
+        text-align: center; /* Center content on mobile */
+        padding: 0 15px;
     }
 
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem; /* Adjusted font size */
+        text-align: center;
+        line-height: 1.1;
     }
 
-    .about-grid,
-    .approach-grid,
-    .stats-grid,
-    .events-grid,
-    .footer-grid {
+    .hero p {
+        font-size: 0.9rem;
+        text-align: center;
+        max-width: none; /* Allow paragraph to take full width */
+    }
+
+    .search-bar {
+        max-width: 90%; /* Increase search bar width */
+        margin: 0 auto; /* Center search bar */
+    }
+    
+    .play-button {
+        margin: 0 auto 25px auto; /* Center play button */
+    }
+
+    h2 {
+        font-size: 2rem; /* Adjusted h2 font size */
+    }
+
+    .about-grid {
         grid-template-columns: 1fr;
+        gap: 40px; /* Reduced gap */
+    }
+
+    .about-image-group {
+        height: auto; /* Allow height to adjust */
+        padding-bottom: 75%; /* Aspect ratio for image */
+        border-radius: 10px;
+    }
+    .about-image-group img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .badge {
+        width: 90px;
+        height: 90px;
+        font-size: 1.6rem;
+        bottom: -25px;
+        right: 15px;
+        border-width: 6px;
+    }
+    
+    .play-overlay-small {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.85rem;
+    }
+    .about-text p:first-of-type {
+        font-size: 0.95rem;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .app-card {
+        height: 250px; /* Reduced height for cards */
+    }
+    .text-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr; /* Stack stats cards */
+        gap: 15px;
+        margin-top: 30px;
+    }
+    .stat-card {
+        padding: 30px 15px;
+    }
+    .circle-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    .stat-card h3 {
+        font-size: 2.5rem;
+    }
+    .stat-card p {
+        font-size: 0.85rem;
     }
 
     .events-header {
         flex-direction: column;
         gap: 20px;
+        margin-bottom: 30px;
     }
-
-    .event-side,
+    .events-grid {
+        grid-template-columns: 1fr;
+        height: auto; /* Allow content to dictate height */
+        gap: 15px;
+    }
+    .event-main, .event-side {
+        height: auto;
+    }
     .event-split {
-        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .event-overlay {
+        padding: 10px 15px;
+        bottom: 15px;
+        left: 15px;
+    }
+    .event-overlay h3 {
+        font-size: 0.9rem;
+    }
+    .event-overlay p {
+        font-size: 0.7rem;
     }
 
-    h2 {
-        font-size: 2rem;
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .footer-col.brand .logo-symbol {
+        margin: 0 auto 20px auto;
+    }
+    .newsletter-form input {
+        max-width: none;
+    }
+    .copyright {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .socials {
+        justify-content: center;
     }
 }
