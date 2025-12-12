@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Women in Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css"> <!-- New CSS for auth pages -->
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-symbol">W</div>
+    </div>
+    <div class="nav-menu">
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="DesignerNew.html">Designers</a></li>
+            <li><a href="SuppliersNew.html">Suppliers</a></li>
+            <li><a href="programsNew.html">Programs</a></li>
+            <li><a href="EventsNew.html">Events</a></li>
+            <li><a href="AboutNew.html">About</a></li>
+            <li><a href="media.html">Media</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html">Login</a>
+            <a href="join-wid.html" class="join-btn">Join WiD</a>
+        </div>
+    </div>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<main class="auth-page">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>Welcome Back</h2>
+            <p>Log in to your Women in Design account.</p>
+        </div>
+        <form class="auth-form">
+            <div class="form-group">
+                <label for="email">Email or Username</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <button type="submit" class="btn-primary">Log In</button>
+        </form>
+        <div class="auth-footer">
+            <p>Don't have an account? <a href="join-wid.html">Join WiD</a></p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-col brand">
+            <div class="logo-symbol">W</div>
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email">
+            </form>
+        </div>
+        
+        <div class="footer-col contact">
+            <h4>Contact</h4>
+            <p>Email: womenindesignug@gmail.com</p>
+            <p>Call: +256 775 602 334</p>
+            <p>Call: +256 751 788 787</p>
+        </div>
+
+        <div class="footer-col links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="DesignerNew.html">Find Designers</a></li>
+                <li><a href="SuppliersNew.html">Connect to Suppliers</a></li>
+                <li><a href="EventsNew.html">Annual Events</a></li>
+                <li><a href="programsNew.html">Our Programs</a></li>
+                <li><a href="#">Become a Member</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container copyright">
+        <p>2025 Copyrights © Women In Design</p>
+        <div class="socials">
+            <span>INSTAGRAM</span>
+            <span>X/TWITTER</span>
+            <span>YOUTUBE</span>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
