@@ -31,4 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Navigate carousel');
         });
     });
+
+    // Hamburger menu toggle logic
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active'); // Optional: to animate hamburger icon
+        });
+    }
 });
