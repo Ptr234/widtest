@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women In Design - Suppliers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-green: #384A40;
+            --sage-green: #A8B8AD;
+            --light-sage: #C9D1CD;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-light: #f4f4f4;
+            --font-main: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Navbar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            color: white;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo i { font-size: 2rem; }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { opacity: 1; font-weight: 700; }
+
+        .active-pill {
+            border: 1px solid white;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .login-btn { font-weight: 600; }
+        .join-btn {
+            background: white;
+            color: var(--dark-green);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 60vh;
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(56, 74, 64, 0.5); /* Dark green overlay */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px 25px;
+            padding-right: 50px;
+            border-radius: 30px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--dark-green);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .filter-label {
+            font-weight: 700;
+            margin-right: 10px;
+            color: var(--dark-green);
+        }
+
+        .filter-list {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .filter-list li {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .filter-list li:hover, .filter-list li.active {
+            color: var(--dark-green);
+            font-weight: 600;
+        }
+
+        /* Supplier Grid */
+        .supplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .supplier-card {
+            background: var(--light-sage);
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .supplier-card:hover { transform: translateY(-5px); }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .business-name {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--dark-green);
+        }
+
+        .specialty {
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .btn-see-more, .btn-contact {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid var(--dark-green);
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark-green);
+            transition: all 0.3s;
+        }
+        .btn-see-more:hover, .btn-contact:hover {
+            background: var(--dark-green);
+            color: white;
+        }
+
+        /* Text-only Card */
+        .supplier-card.text-card .card-content {
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .supplier-card.text-card .desc {
+            font-size: 0.75rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 60px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .page-num { cursor: pointer; }
+        .page-num.active {
+            font-weight: 700;
+            color: var(--dark-green);
+        }
+
+        /* --- Sign Up Section --- */
+        .signup-section {
+            background: var(--dark-green);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            /* Subtle texture overlay */
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(45)" opacity="0.05" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23ffffff" stroke-width="1"><path d="M0 0h100v100H0z"/><path d="M0 0l100 100M100 0L0 100"/></g></svg>');
+        }
+
+        .signup-subtitle {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .signup-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .signup-desc {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .signup-form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-input {
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: transparent;
+            color: white;
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            outline: none;
+        }
+        .form-input::placeholder { color: rgba(255,255,255,0.6); }
+
+        .btn-signup-submit {
+            background: var(--light-sage);
+            color: var(--dark-green);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-signup-submit:hover { background: white; }
+
+        /* --- Footer --- */
+        .footer {
+            background: #f9f9f9;
+            padding: 80px 50px 30px;
+            color: #555;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-brand { flex: 1; min-width: 250px; }
+
+        .footer-logo { margin-bottom: 30px; }
+        .footer-logo i { font-size: 2.5rem; color: var(--sage-green); margin-bottom: 10px; display: block; }
+        .footer-logo span { 
+            font-weight: 800; 
+            font-size: 0.9rem; 
+            line-height: 1.1; 
+            display: inline-block; 
+            color: var(--dark-green);
+        }
+
+        .subscribe-box p { 
+            font-size: 0.8rem; 
+            font-weight: 700; 
+            margin-bottom: 10px; 
+            color: #333;
+        }
+        .subscribe-box input {
+            padding: 12px 15px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+            background: transparent;
+            width: 100%;
+            max-width: 250px;
+            font-size: 0.8rem;
+            outline: none;
+        }
+
+        .footer h4 { 
+            font-size: 0.9rem; 
+            margin-bottom: 25px; 
+            color: #333; 
+            font-weight: 700; 
+        }
+        
+        .footer p, .footer li a { 
+            font-size: 0.8rem; 
+            color: #777; 
+            line-height: 2; 
+            margin-bottom: 5px; 
+            display: block; 
+            font-weight: 500;
+        }
+        .footer li a:hover { color: var(--dark-green); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid #ddd;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #999;
+            letter-spacing: 1px;
+        }
+
+        .social-links a { 
+            margin-left: 15px; 
+            color: #999;
+            font-weight: 600;
+        }
+        .social-links a:hover { color: var(--dark-green); }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .navbar { padding: 20px; }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.5rem; }
+            .signup-form { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; }
+            .footer-bottom { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+    
+
+    
+
+    <div class="container">
+        <div class="filter-section">
+            <span class="filter-label">FILTER:</span>
+            <ul class="filter-list">
+                <li class="active">ALL</li>
+                <li>TILLING</li>
+                <li>CERAMIC</li>
+                <li>WOOD WORK</li>
+                <li>PAINTING</li>
+                <li>PAVING</li>
+                <li>ROOFING</li>
+            </ul>
+        </div>
+
+        <div class="supplier-grid">
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card text-card">
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="btn-contact">SEE CONTACT</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1605117882932-f9e32b03ef76?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+             <div class="supplier-card text-card">
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="#" class="btn-contact">SEE CONTACT</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+            <div class="supplier-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400&h=300" alt="Supplier">
+                </div>
+                <div class="card-content">
+                    <h3 class="business-name">Business Name</h3>
+                    <p class="specialty">Speciality</p>
+                    <a href="#" class="btn-see-more">SEE MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <i class="fas fa-chevron-left"></i>
+            <span class="page-num active">1</span>
+            <span class="page-num">2</span>
+            <span class="page-num">3</span>
+            <span class="page-num">4</span>
+            <span class="page-num">5</span>
+            <span class="page-num">6</span>
+            <span class="page-num">7</span>
+            <span class="page-num">8</span>
+            <span class="page-num">9 ...</span>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <section class="signup-section">
+        <span class="signup-subtitle">SIGN UP</span>
+        <h2 class="signup-title">Join our supplier list</h2>
+        <p class="signup-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <form class="signup-form">
+            <input type="text" class="form-input" placeholder="Name">
+            <input type="text" class="form-input" placeholder="Contact">
+            <input type="email" class="form-input" placeholder="Email">
+            <input type="text" class="form-input" placeholder="Business Name">
+            <input type="text" class="form-input" placeholder="Business location">
+            <button type="submit" class="btn-signup-submit">Sign Up</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-infinity"></i>
+                    <span>Women<br>In Design</span>
+                </div>
+                <div class="subscribe-box">
+                    <p>Subscribe to our newsletter</p>
+                    <form>
+                        <input type="email" placeholder="Email">
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: womenindesignug@gmail.com</p>
+                <p>Call: +256 775 692 334</p>
+                <p>Call: +256 781 788 787</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Find Designers</a></li>
+                    <li><a href="#">Connect to Suppliers</a></li>
+                    <li><a href="#">Annual Events</a></li>
+                    <li><a href="#">Our Programs</a></li>
+                    <li><a href="#">Become a Member</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>2025 Copyrights to Women In Design</p>
+            <div class="social-links">
+                <a href="#">INSTAGRAM</a> | <a href="#">X/TWITTER</a> | <a href="#">YOUTUBE</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Basic form submission handling (prevents page reload for demo)
+        document.querySelector('.search-container form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Search functionality would be implemented here.');
+        });
+
+        document.querySelector('.signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for signing up! We will be in touch.');
+        });
+
+        // Filter click handling (for demo visualization)
+        const filterItems = document.querySelectorAll('.filter-list li');
+        filterItems.forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.filter-list li.active').classList.remove('active');
+                this.classList.add('active');
+                // In a real app, this would filter the grid items
+            });
+        });
+    </script>
+    </main>
+</body>
+</html>

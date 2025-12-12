@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women In Design - About Foundation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --primary-dark: #35453B;
+            --primary-light: #D5DAD7;
+            --accent-gold: #C5A065;
+            --footer-bg: #F5F5F3;
+            --card-vision: #4a4a4a;
+            --card-mission: #d99a6c;
+            --text-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background-color: var(--primary-light);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER (Overlay Style) --- */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .logo { font-size: 2rem; font-weight: bold; font-family: 'Playfair Display', serif; }
+
+        nav ul { display: flex; gap: 20px; }
+        nav ul li a:hover, nav ul li a.active { border-bottom: 1px solid white; }
+
+        .header-actions button {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .header-actions button.btn-join { background: white; color: var(--primary-dark); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h4 { font-family: 'Lato', sans-serif; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+        .hero h1 { font-size: 3.5rem; max-width: 800px; line-height: 1.1; margin-bottom: 20px; }
+        .hero p { max-width: 600px; font-size: 1rem; margin-bottom: 30px; line-height: 1.5; }
+        
+        .btn-hero {
+            background: white;
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- WHO WE ARE (Dark Section) --- */
+        .section-dark {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 80px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* Video/Image Gallery Left */
+        .gallery-wrapper { display: flex; flex-direction: column; gap: 15px; }
+        
+        .main-video {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .main-video img { width: 100%; height: 100%; object-fit: cover; }
+        .play-overlay {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px; height: 60px;
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(4px);
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .thumbnails { display: flex; gap: 10px; align-items: center; }
+        .thumb-img {
+            flex: 1;
+            aspect-ratio: 4/3;
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0.7;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .thumb-img:hover { opacity: 1; }
+        .thumb-img img { width: 100%; height: 100%; object-fit: cover; }
+        .nav-arrow { font-size: 1.5rem; cursor: pointer; padding: 0 10px; opacity: 0.7; }
+
+        /* Text Right */
+        .sub-heading { font-family: 'Lato', sans-serif; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; opacity: 0.8; }
+        .section-title { font-size: 3rem; margin-bottom: 20px; line-height: 1; }
+        .text-block p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; opacity: 0.9; }
+
+        /* --- OBJECTIVES (Light Section) --- */
+        .section-light {
+            background-color: var(--primary-light);
+            padding: 80px 40px;
+            color: #333;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: 40% 55%;
+            gap: 5%;
+        }
+
+        /* Vision/Mission Cards */
+        .cards-stack { display: flex; flex-direction: column; gap: 20px; }
+        
+        .info-card {
+            border-radius: 12px;
+            padding: 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .info-card h3 { font-size: 1.5rem; margin-bottom: 10px; position: relative; z-index: 2; }
+        .info-card p { font-size: 0.9rem; line-height: 1.5; position: relative; z-index: 2; }
+        
+        .card-bg-img {
+            position: absolute; top:0; left:0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 0; opacity: 0.4; mix-blend-mode: overlay;
+        }
+
+        .card-vision { background-color: #333; }
+        .card-mission { background-color: #C08552; }
+
+        /* Objectives List */
+        .obj-list-container h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-dark); }
+        .obj-intro { font-size: 0.9rem; margin-bottom: 30px; color: #555; }
+
+        .obj-list li {
+            border-bottom: 1px solid #bbb;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #444;
+            cursor: pointer;
+        }
+        .obj-list li:hover { color: var(--primary-dark); font-weight: bold; }
+        .obj-list li i { font-size: 0.8rem; color: #777; }
+
+        /* --- GOVERNING TEAM --- */
+        .team-intro { text-align: center; margin-bottom: 50px; }
+        .team-intro h2 { font-size: 2.5rem; }
+        .team-intro p { max-width: 500px; margin: 10px auto; font-size: 0.9rem; opacity: 0.8; }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-card {
+            width: 18%; /* Fits 5 in a row approx */
+            min-width: 180px;
+            margin-bottom: 30px;
+        }
+
+        .team-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #555;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .team-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .team-role { font-size: 0.6rem; text-transform: uppercase; opacity: 0.7; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+        .team-name { font-size: 0.95rem; font-weight: bold; margin-bottom: 3px; font-family: 'Lato', sans-serif; }
+        .team-company { font-size: 0.75rem; opacity: 0.8; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--footer-bg);
+            padding: 60px 40px 20px;
+            position: relative;
+            overflow: hidden;
+            color: #333;
+        }
+        .watermark {
+            position: absolute; right: -50px; bottom: -50px;
+            font-size: 25rem; font-family: 'Playfair Display', serif;
+            color: rgba(0,0,0,0.03); pointer-events: none; z-index: 1; font-style: italic;
+        }
+        .footer-content { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+        .footer-col { flex: 1; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; color: #889; }
+        .newsletter-input { width: 90%; padding: 10px; border: 1px solid #ccc; border-radius: 20px; background: transparent; margin-top: 5px; }
+        .footer-links li { margin-bottom: 8px; font-size: 0.85rem; color: #555; }
+        .contact-info p { font-size: 0.85rem; color: #555; margin-bottom: 5px; }
+        .footer-bottom { border-top: 1px solid #ddd; margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; font-size: 0.7rem; color: #777; text-transform: uppercase; position: relative; z-index: 2; max-width: 1200px; margin-left: auto; margin-right: auto;}
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .who-grid, .objectives-grid { grid-template-columns: 1fr; gap: 40px; }
+            .team-card { width: 45%; }
+            .footer-content { flex-direction: column; gap: 30px; }
+            header { flex-direction: column; gap: 15px; }
+            nav ul { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+    <section class="hero">
+        <h4>Learn About The</h4>
+        <h1>Women in Design<br>Foundation Uganda</h1>
+        <p>Empowering women, shaping Uganda's built environment.<br>A growing community of designers, architects, makers and creatives dedicated to excellence.</p>
+        <button class="btn-hero">Become a Member</button>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <div class="who-grid">
+                <div class="gallery-wrapper">
+                    <div class="main-video">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" alt="Group">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="thumbnails">
+                        <div class="nav-arrow">&lt;</div>
+                        <div class="thumb-img"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=200" alt="Thumb 1"></div>
+                        <div class="thumb-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=200" alt="Thumb 2"></div>
+                        <div class="thumb-img"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=200" alt="Thumb 3"></div>
+                        <div class="nav-arrow">&gt;</div>
+                    </div>
+                </div>
+
+                <div class="text-block">
+                    <div class="sub-heading">About The Community</div>
+                    <h2 class="section-title">Who We Are</h2>
+                    <p>Women in Design is a foundation uniting interior designers, architects, contractors, decor shop owners, furniture makers, art collectors, and design enthusiasts across Uganda.</p>
+                    <p>We believe design is a universal language—one that shapes how people live, work, and thrive. As a community, we champion awareness, collaboration, skills development, and business growth for women in the design and construction ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <div class="objectives-grid">
+                <div class="cards-stack">
+                    <div class="info-card card-vision">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=400" class="card-bg-img">
+                        <h3>Our Vision</h3>
+                        <p>To create a global network of women in interior design who support, mentor, and uplift each other—driving innovation, excellence, and community impact.</p>
+                    </div>
+                    <div class="info-card card-mission">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400" class="card-bg-img">
+                        <h3>Our Mission</h3>
+                        <p>To advance the art and science of interior design in Uganda through education, networking, community engagement, and recognition of our members' achievements.</p>
+                    </div>
+                </div>
+
+                <div class="obj-list-container">
+                    <h2>Our Objectives</h2>
+                    <p class="obj-intro">We are dedicated to fostering growth and maintaining high standards within the industry through these core objectives.</p>
+                    <ul class="obj-list">
+                        <li>Build a strong community of women in design <i class="fas fa-plus"></i></li>
+                        <li>Promote design awareness in Uganda <i class="fas fa-plus"></i></li>
+                        <li>Train and empower through knowledge sharing <i class="fas fa-plus"></i></li>
+                        <li>Create reliable partnerships locally & internationally <i class="fas fa-plus"></i></li>
+                        <li>Lobby for business as a collective <i class="fas fa-plus"></i></li>
+                        <li>Build ethical & professional standards <i class="fas fa-plus"></i></li>
+                        <li>Create pathways to profitable opportunities <i class="fas fa-plus"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <div class="team-intro">
+                <div class="sub-heading">Meet The</div>
+                <h2>The Governing team</h2>
+                <p>Dedicated professionals leading the charge for a better design future in Uganda.</p>
+            </div>
+
+            <div class="team-container" id="teamGrid">
+                </div>
+        </div>
+    </section>
+
+        </main>
+</body>
+</html>
