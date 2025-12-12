@@ -1,0 +1,309 @@
+/* --- CSS VARIABLES (Specific to programsNew.html, overriding global or adding new) --- */
+:root {
+    --primary-dark: #374A3D; /* Deep Green from screenshot */
+    --primary-light: #B8CUC1;
+    --card-bg: #CBE0D6;      /* Sage green for cards */
+    --section-bg: #DDE5E1;   /* Light grey-green for form section */
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --accent-border: #999;
+}
+
+body {
+    background-color: #fff;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 85vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?q=80&w=2669&auto=format&fit=crop') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    max-width: 600px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* --- PROGRAMS GRID SECTION --- */
+.programs-section {
+    background-color: var(--primary-dark);
+    padding: 80px 50px 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Card Styling */
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 400px; /* Fixed height for consistency */
+}
+
+.card-content {
+    background-color: var(--card-bg);
+    padding: 25px;
+    flex: 1; /* Takes up roughly half */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-date {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.8rem;
+    color: #444;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.btn-read-more {
+    align-self: flex-start;
+    padding: 6px 15px;
+    border: 1px solid #777;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-read-more:hover {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.card-image {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+.pagination span {
+    cursor: pointer;
+}
+
+.pagination span.active {
+    color: white;
+    font-weight: bold;
+}
+
+/* --- SIGN UP SECTION --- */
+.signup-section {
+    background-color: var(--section-bg);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.signup-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.signup-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.signup-desc {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.signup-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #aaa;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+/* Make the second row specific (2 inputs + button) */
+.form-row-2 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: #A9C6BA; /* Slightly darker sage */
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-signup:hover {
+    background-color: #8faea1;
+}
+
+/* --- FOOTER (programs specific overrides) --- */
+footer {
+    background-color: #f9f9f9;
+    padding: 60px 50px 20px 50px; /* Specific padding for programs footer */
+}
+
+.footer-content {
+    margin-bottom: 60px; /* Specific margin for programs footer */
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.subscribe-label {
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.subscribe-input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 80%;
+    background: transparent;
+}
+
+.footer-heading {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.footer-col p, .footer-col li {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #666;
+    list-style: none;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .signup-form, .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

@@ -5,576 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women In Design - Community Replica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --dark-green: #384A40; /* The main dark background */
-            --light-bg: #DCE3DF;    /* The pricing section background */
-            --accent-light: #A8B8AD; /* Lighter accents */
-            --text-white: #ffffff;
-            --text-dark: #333333;
-            --font-main: 'Montserrat', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-main);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            background-color: #f4f4f4;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* --- Navbar --- */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            position: absolute;
-            width: 100%;
-            z-index: 100;
-            color: white;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo i { font-size: 2rem; }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-        .nav-links a:hover { opacity: 0.8; }
-
-        .active-pill {
-            border: 1px solid white;
-            padding: 5px 15px;
-            border-radius: 20px;
-        }
-
-        .auth-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .join-btn {
-            background: white;
-            color: #333;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.7rem;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            width: 100%;
-            min-height: 90vh; /* Matches the tall hero in image */
-            background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 80px;
-            padding-left: 50px;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(147, 158, 151, 0.75); /* Muted sage/green overlay */
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .sub-label {
-            display: block;
-            color: white;
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-main);
-            font-size: 3.5rem;
-            color: white;
-            font-weight: 800;
-            margin-bottom: 15px;
-            line-height: 1.1;
-        }
-
-        .hero-content p {
-            color: white;
-            max-width: 450px;
-            margin-bottom: 60px;
-            font-weight: 400;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Members Carousel */
-        .members-carousel {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            overflow-x: auto;
-            padding-bottom: 20px;
-            scrollbar-width: none; /* Hide scrollbar Firefox */
-        }
-        .members-carousel::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome */
-
-        .nav-arrow {
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0 10px;
-        }
-
-        .member-card {
-            position: relative;
-            width: 220px;
-            height: 280px;
-            border-radius: 15px;
-            overflow: hidden;
-            flex-shrink: 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-        .member-card:hover { transform: translateY(-5px); }
-
-        .member-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .member-card .card-info {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 20px 10px;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .card-info h3 { font-size: 0.9rem; margin-bottom: 3px; font-weight: 700; }
-        .card-info p { font-size: 0.6rem; opacity: 0.9; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.5px;}
-
-        /* --- Featured Dark Section --- */
-        .featured-section {
-            background-color: var(--dark-green);
-            padding: 80px 50px;
-            color: white;
-            /* Subtle pattern overlay logic */
-            background-image: radial-gradient(circle at 100% 100%, rgba(255,255,255,0.03) 0%, transparent 20%), 
-                              radial-gradient(circle at 0% 0%, rgba(255,255,255,0.03) 0%, transparent 20%);
-        }
-
-        .featured-container {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 1fr;
-            gap: 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        /* Left Col: Profile */
-        .featured-profile {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile-circle {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .profile-circle img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid rgba(255,255,255,0.1);
-        }
-
-        .profile-details small { 
-            opacity: 0.6; 
-            display: block; 
-            margin-bottom: 5px; 
-            font-size: 0.7rem; 
-            letter-spacing: 2px; 
-        }
-        .profile-details h3 { 
-            font-size: 1.6rem; 
-            margin-bottom: 5px; 
-            font-weight: 800; 
-        }
-        .profile-details .company { 
-            font-weight: 400; 
-            opacity: 0.8; 
-            margin-bottom: 20px; 
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-        .profile-details .lorem { 
-            font-size: 0.8rem; 
-            line-height: 1.6; 
-            opacity: 0.7; 
-            max-width: 300px;
-        }
-
-        /* Middle Col: Video */
-        .featured-video {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 450px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .featured-video img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .featured-video:hover img { transform: scale(1.05); }
-
-        .play-button {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px; height: 70px;
-            background: rgba(255,255,255,0.2);
-            border: 1px solid white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(4px);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .play-button i { color: white; font-size: 1.2rem; margin-left: 3px; }
-        .play-button:hover { background: white; }
-        .play-button:hover i { color: var(--dark-green); }
-
-        /* Right Col: List */
-        .featured-list h3 {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .project-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .project-item:hover { transform: translateX(5px); }
-
-        .project-item img {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
-            object-fit: cover;
-        }
-
-        .project-text h4 { font-size: 1rem; margin-bottom: 4px; font-weight: 700; }
-        .project-text p { font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; }
-
-        .cta-container {
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .btn-pill-large {
-            background: rgba(255,255,255,0.85);
-            color: var(--dark-green);
-            padding: 14px 35px;
-            border-radius: 30px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            transition: 0.3s;
-        }
-        .btn-pill-large:hover { background: white; transform: scale(1.05); display: inline-block; }
-
-        /* --- Pricing Section --- */
-        .pricing-section {
-            background-color: var(--light-bg);
-            padding: 100px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Swirly Background simulation */
-        .pricing-section::before, .pricing-section::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            z-index: 0;
-        }
-        .pricing-section::before { width: 600px; height: 600px; top: -100px; left: -100px; }
-        .pricing-section::after { width: 800px; height: 800px; bottom: -200px; right: -200px; }
-
-        .pricing-header {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 60px;
-        }
-
-        .sub-label-dark {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #777;
-            display: block;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .pricing-header h2 {
-            font-size: 2.5rem;
-            color: var(--dark-green);
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .pricing-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .pricing-cards {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .price-card {
-            background: white;
-            padding: 50px 30px;
-            border-radius: 25px;
-            width: 320px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .price-card.corporate {
-            transform: scale(1.1);
-            z-index: 2;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .price-card h3 { 
-            color: #A8B8AD; 
-            font-size: 1.4rem; 
-            margin-bottom: 15px; 
-            font-family: var(--font-serif); 
-            font-weight: 700;
-        }
-        
-        .price-card .price { 
-            font-size: 1.3rem; 
-            font-weight: 700; 
-            color: #555; 
-            margin-bottom: 20px; 
-        }
-
-        .price-card .desc { 
-            font-size: 0.8rem; 
-            color: #999; 
-            margin-bottom: 30px; 
-            font-style: italic; 
-        }
-
-        .features { margin-bottom: 30px; }
-        .features li {
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .btn-signup {
-            display: inline-block;
-            border: 1px solid #ddd;
-            padding: 10px 30px;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            background: transparent;
-        }
-
-        .btn-signup:hover {
-            background: var(--dark-green);
-            color: white;
-            border-color: var(--dark-green);
-        }
-
-        /* --- Footer --- */
-        .footer {
-            background: #f2f5f4;
-            padding: 80px 50px 30px;
-            color: #555;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto 60px;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .footer-brand { flex: 1; min-width: 250px; }
-
-        .footer-logo { margin-bottom: 30px; }
-        .footer-logo i { font-size: 2.5rem; color: #889990; margin-bottom: 10px; display: block; }
-        .footer-logo span { 
-            font-weight: 800; 
-            font-size: 0.9rem; 
-            line-height: 1.1; 
-            display: inline-block; 
-            color: var(--dark-green);
-        }
-
-        .subscribe-box p { 
-            font-size: 0.8rem; 
-            font-weight: 700; 
-            margin-bottom: 10px; 
-            color: #333;
-        }
-        .subscribe-box input {
-            padding: 12px 15px;
-            border-radius: 25px;
-            border: 1px solid #ccc;
-            background: transparent;
-            width: 100%;
-            max-width: 250px;
-            font-size: 0.8rem;
-            outline: none;
-        }
-
-        .footer h4 { 
-            font-size: 0.9rem; 
-            margin-bottom: 25px; 
-            color: #333; 
-            font-weight: 700; 
-        }
-        
-        .footer p, .footer li a { 
-            font-size: 0.8rem; 
-            color: #777; 
-            line-height: 2; 
-            margin-bottom: 5px; 
-            display: block; 
-            font-weight: 500;
-        }
-        .footer li a:hover { color: var(--dark-green); }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid #ddd;
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: #999;
-            letter-spacing: 1px;
-        }
-
-        .social-links a { 
-            margin-left: 15px; 
-            color: #999;
-            font-weight: 600;
-        }
-        .social-links a:hover { color: var(--dark-green); }
-
-        /* Responsive Adjustments */
-        @media (max-width: 900px) {
-            .navbar { padding: 20px; }
-            .nav-links { display: none; }
-            
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero { padding-left: 20px; align-items: flex-start; }
-            
-            .featured-container { grid-template-columns: 1fr; gap: 30px; }
-            .featured-video { height: 300px; }
-            
-            .pricing-cards { flex-direction: column; gap: 20px; }
-            .price-card.corporate { transform: scale(1); }
-            
-            .footer-content { flex-direction: column; }
-            .footer-bottom { flex-direction: column; gap: 10px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="designer.css">
 </head>
 <body>
-    <main>
 
-    
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-symbol">W</div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="DesignerNew.html">Designers</a></li>
+        <li><a href="SuppliersNew.html">Suppliers</a></li>
+        <li><a href="programsNew.html">Programs</a></li>
+        <li><a href="EventsNew.html">Events</a></li>
+        <li><a href="AboutNew.html">About</a></li>
+        <li><a href="media.html">Media</a></li>
+    </ul>
+    <div class="auth-buttons">
+        <a href="#">Login</a>
+        <a href="#" class="join-btn">Join WiD</a>
+    </div>
+</nav>
 
-    
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="sub-label">OUR COMMUNITY OF DESIGNER</span>
+            <h1>Meet Our Members</h1>
+            <p>Connect with Uganda's most talented women designers and trusted suppliers in the construction and design industry.</p>
+            
+            <div class="members-carousel">
+                <button class="nav-arrow left"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=500" alt="Sophia">
+                    <div class="card-info">
+                        <h3>Sophia Nyanzi</h3>
+                        <p>Interior Designer<br>Takai Spaces</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=400&h=500" alt="Rachael">
+                    <div class="card-info">
+                        <h3>Rachael Baine</h3>
+                        <p>Principal Interior Designer<br>LUMBAJE DESIGN STUDIO</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1589156229687-496a31ad1d1f?auto=format&fit=crop&q=80&w=400&h=500" alt="Grace">
+                    <div class="card-info">
+                        <h3>Grace Linda</h3>
+                        <p>Interior Designer<br>Takai Spaces</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=400&h=500" alt="Sharon">
+                    <div class="card-info">
+                        <h3>Sharon Tumusiime</h3>
+                        <p>Interior Designer<br>PALIT Woodwork</p>
+                    </div>
+                </div>
+
+                <button class="nav-arrow right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </header>
 
     <section class="featured-section">
         <div class="featured-container">
@@ -702,7 +202,45 @@
         </div>
     </section>
 
-    
+
+
+<footer>
+    <div class="container footer-grid">
+        <div class="footer-col brand">
+            <div class="logo-symbol">W</div>
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Email">
+            </form>
+        </div>
+        
+        <div class="footer-col contact">
+            <h4>Contact</h4>
+            <p>Email: womenindesignug@gmail.com</p>
+            <p>Call: +256 775 602 334</p>
+            <p>Call: +256 751 788 787</p>
+        </div>
+
+        <div class="footer-col links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="DesignerNew.html">Find Designers</a></li>
+                <li><a href="SuppliersNew.html">Connect to Suppliers</a></li>
+                <li><a href="EventsNew.html">Annual Events</a></li>
+                <li><a href="programsNew.html">Our Programs</a></li>
+                <li><a href="#">Become a Member</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container copyright">
+        <p>2025 Copyrights © Women In Design</p>
+        <div class="socials">
+            <span>INSTAGRAM</span>
+            <span>X/TWITTER</span>
+            <span>YOUTUBE</span>
+        </div>
+    </div>
+</footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -742,6 +280,5 @@
             });
         });
     </script>
-    </main>
 </body>
 </html>
