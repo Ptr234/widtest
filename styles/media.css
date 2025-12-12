@@ -1,41 +1,41 @@
 @font-face {
     font-family: 'PPNeueMachina-Inktrap Light';
-    src: url('./fonts/PPNeueMachina-InktrapLight.otf') format('opentype');
+    src: url('../public/fonts/PPNeueMachina-InktrapLight.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PPNeueMachina-Inktrap Regular';
-    src: url('./fonts/PPNeueMachina-InktrapRegular.otf') format('opentype');
+    src: url('../public/fonts/PPNeueMachina-InktrapRegular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PPNeueMachina-Inktrap Ultrabold';
-    src: url('./fonts/PPNeueMachina-InktrapUltrabold.otf') format('opentype');
+    src: url('../public/fonts/PPNeueMachina-InktrapUltrabold.otf') format('opentype');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PPNeueMachina-Plain Light';
-    src: url('./fonts/PPNeueMachina-PlainLight.otf') format('opentype');
+    src: url('../public/fonts/PPNeueMachina-PlainLight.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PPNeueMachina-Plain Regular';
-    src: url('./fonts/PPNeueMachina-PlainRegular.otf') format('opentype');
+    src: url('../public/fonts/PPNeueMachina-PlainRegular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PPNeueMachina-Plain Ultrabold';
-    src: url('./fonts/PPNeueMachina-PlainUltrabold.otf') format('opentype');
+    src: url('../public/fonts/PPNeueMachina-PlainUltrabold.otf') format('opentype');
     font-weight: 800;
     font-style: normal;
 }

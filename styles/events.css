@@ -18,8 +18,7 @@ body {
 .hero {
     height: 60vh;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=2669&auto=format&fit=crop') center/30% no-repeat;
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../public/images/PBR-9693.jpg') center/30% no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
