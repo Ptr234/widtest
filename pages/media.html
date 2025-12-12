@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women In Design - Spaces & Stories</title>
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../styles/media.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="../public/WID - 3.svg" alt="WID Logo" style="height: 50px;"></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="DesignerNew.html">Designers</a></li>
+                <li><a href="SuppliersNew.html">Suppliers</a></li>
+                <li><a href="programsNew.html">Programs</a></li>
+                <li><a href="EventsNew.html">Events</a></li>
+                <li><a href="AboutNew.html">About</a></li>
+                <li><a href="media.html" class="active">Media</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn-header btn-login">LOGIN</button>
+            <button class="btn-header btn-join">JOIN WID</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-sub">Design - Shaping Conversations</div>
+        <h1 class="hero-title">Spaces & Stories</h1>
+        <p class="hero-desc">Behind every beautiful space is a woman with a story.<br>Step into the world of women shaping design and redefining creativity.</p>
+
+        <div class="video-grid" id="videoGrid">
+            </div>
+
+        <div class="pagination">
+            <span>&lt;</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9 ...</span>
+            <span>&gt;</span>
+        </div>
+
+        <button class="btn-subscribe">Subscribe to our YouTube Channel</button>
+    </section>
+
+    <section class="gallery-section">
+        <div class="filters">
+            <span style="font-weight:bold; color:black;">Filter:</span>
+            <span class="active">ALL</span> |
+            <span>WORKSHOP</span> |
+            <span>TRAINING</span> |
+            <span>EVENT</span> |
+            <span>AGM</span> |
+            <span>WOMEN@WORK</span>
+        </div>
+
+        <div class="image-grid" id="imageGrid">
+            </div>
+    </section>
+
+    <footer>
+        <div class="watermark"><img src="../public/WID - 3.svg" alt="WID Logo" style="height: 250px; opacity: 0.03;"></div>
+        <div class="footer-content">
+            <div class="footer-col" style="flex: 1;">
+                <div class="footer-logo"><img src="../public/WID - 3.svg" alt="WID Logo" style="height: 50px;"></div>
+                <label for="email" style="font-size: 0.75rem; font-weight: bold;">Subscribe to our newsletter</label>
+                <input type="email" id="email" placeholder="Email" class="newsletter-input">
+            </div>
+
+            <div class="footer-col" style="flex: 1;">
+                <h4>Contact</h4>
+                <div class="contact-info">
+                    <p>Email: womenindesignug@gmail.com</p>
+                    <p>Call: +256 775 692 334</p>
+                    <p>Call: +256 781 788 787</p>
+                </div>
+            </div>
+
+            <div class="footer-col" style="flex: 1;">
+                <h4>Quick links</h4>
+                <ul class="footer-links">
+                    <li>Find Designers</li>
+                    <li>Connect to Suppliers</li>
+                    <li>Annual Events</li>
+                    <li>Our Programs</li>
+                    <li>Become a Member</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>2025 Copyrights to Women In Design</div>
+            <div>
+                <span style="margin: 0 10px;">Instagram</span> | 
+                <span style="margin: 0 10px;">X/Twitter</span> | 
+                <span style="margin: 0 10px;">YouTube</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data for Video Cards
+        const videos = [
+            { ep: "Episode 1", title: "Dealing with change", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" },
+            { ep: "Episode 2", title: "Dealing with clients", img: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=600" },
+            { ep: "Episode 3", title: "Building your brand", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&q=80&w=600" },
+            { ep: "Episode 4", title: "Does niching pay?", img: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=600" },
+            { ep: "Episode 5", title: "Elevating the craft", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600" },
+            { ep: "Episode 6", title: "Staying creative", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=600" }
+        ];
+
+        // Render Video Grid
+        const videoContainer = document.getElementById('videoGrid');
+        videos.forEach(video => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            card.innerHTML = `
+                <div class="video-meta">
+                    <span class="episode-label">${video.ep}</span>
+                    <div class="video-title">${video.title}</div>
+                </div>
+                <div class="thumbnail-wrapper">
+                    <img src="${video.img}" alt="${video.title}">
+                    <div class="play-btn"><i class="fas fa-play" style="margin-left:4px;"></i></div>
+                </div>
+            `;
+            videoContainer.appendChild(card);
+        });
+
+        // Render Image Gallery (20 placeholders)
+        const galleryContainer = document.getElementById('imageGrid');
+        for (let i = 0; i < 20; i++) {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            // Using placeholder text images to simulate diverse content
+            const img = document.createElement('img');
+            img.src = `https://picsum.photos/300/300?random=${i + 10}`;
+            div.appendChild(img);
+            galleryContainer.appendChild(div);
+        }
+
+        // Simple Filter Click Interaction (Visual)
+        const filterSpans = document.querySelectorAll('.filters span');
+        filterSpans.forEach(span => {
+            span.addEventListener('click', function() {
+                if(this.textContent.includes('Filter')) return;
+                document.querySelector('.filters span.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
