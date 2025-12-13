@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   basePath: '/widtest',
+  trailingSlash: true, // Add this line
   images: {
     remotePatterns: [
       {
