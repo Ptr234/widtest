@@ -1,24 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: '/widtest',
-  trailingSlash: true, // Add this line
+  output: "export",
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    unoptimized: true,
   },
+  basePath: process.env.NODE_ENV === "production" ? "/widtest" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/widtest/" : "",
 };
 
 module.exports = nextConfig;
