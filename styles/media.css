@@ -411,13 +411,34 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .video-grid { grid-template-columns: repeat(2, 1fr); }
-    .image-grid { grid-template-columns: repeat(4, 1fr); }
+    .video-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .image-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Adjusted to 3 columns */
 }
 @media (max-width: 768px) {
-    header { flex-direction: column; gap: 15px; }
+    header { flex-direction: column; gap: 15px; padding: 20px; } /* Reduced padding */
     nav ul { font-size: 0.65rem; gap: 10px; flex-wrap: wrap; justify-content: center;}
-    .video-grid { grid-template-columns: 1fr; }
-    .image-grid { grid-template-columns: repeat(2, 1fr); }
+    .video-grid { grid-template-columns: 1fr; gap: 15px; } /* Reduced gap */
+    .image-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; } /* Reduced gap */
     .footer-content { flex-direction: column; gap: 40px; }
+    footer { padding: 40px 20px 20px; } /* Reduced padding */
+    .watermark { font-size: 15rem; }
+    .hero-title { font-size: 2.8rem; } /* Adjusted font size */
+    .hero-desc { font-size: 0.85rem; } /* Adjusted font size */
+}
+@media (max-width: 480px) {
+    header { padding: 15px; } /* Further reduced padding */
+    .hero { padding: 40px 15px 50px; } /* Adjusted padding */
+    .hero-title { font-size: 2.2rem; } /* Further adjusted font size */
+    .hero-desc { font-size: 0.8rem; }
+    .video-grid { gap: 10px; } /* Further reduced gap */
+    .gallery-section { padding: 20px 15px; } /* Reduced padding */
+    .image-grid { grid-template-columns: 1fr; gap: 5px; } /* Single column for very small screens */
+    .filters { font-size: 0.65rem; margin-bottom: 20px; }
+    .filters span { margin: 0 3px; }
+    .footer-content { gap: 20px; }
+    footer { padding: 30px 15px 15px; } /* Further reduced padding */
+    .footer-col h4 { font-size: 0.7rem; margin-bottom: 10px; }
+    .footer-links li, .contact-info p { font-size: 0.75rem; }
+    .newsletter-input { padding: 8px; font-size: 0.75rem; }
+    .btn-subscribe { padding: 10px 20px; font-size: 0.6rem; }
 }
