@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'PPNeueMachina-Inktrap';
     src: url('../public/fonts/PPNeueMachina-InktrapLight.otf') format('opentype');
@@ -54,7 +56,7 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-cream);
+    background-color: #f0f0f0;
     color: var(--text-dark);
     overflow-x: hidden;
 }
