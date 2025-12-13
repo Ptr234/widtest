@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'PPNeueMachina-Inktrap';
     src: url('../public/fonts/PPNeueMachina-InktrapLight.otf') format('opentype');
@@ -166,6 +167,58 @@ h2 {
     background: rgba(255,255,255,0.9);
     transform: scale(1.05);
 }
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease-in-out;
+    z-index: 99;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+    color: white;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
 
 /* Hero */
 .hero {
@@ -715,6 +768,14 @@ footer {
 
     .nav-links {
         display: none;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .hero {
