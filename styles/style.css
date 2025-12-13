@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'PPNeueMachina-Inktrap';
     src: url('../public/fonts/PPNeueMachina-InktrapLight.otf') format('opentype');
@@ -171,6 +170,8 @@ h2 {
 .hamburger {
     display: none;
     cursor: pointer;
+    position: relative;
+    z-index: 200; /* Ensure it's above the mobile nav */
 }
 
 .hamburger .bar {
@@ -183,19 +184,36 @@ h2 {
     background-color: white;
 }
 
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 .mobile-nav {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100vh;
-    background-color: var(--primary-dark);
+    background-color: var(--primary-dark); /* Use primary dark for background */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: left 0.3s ease-in-out;
-    z-index: 99;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    transition: transform 0.3s ease-in-out;
+    z-index: 150; /* Ensure it's above other content but below hamburger */
+}
+
+.mobile-nav.active {
+    transform: translateX(0); /* Slide in */
 }
 
 .mobile-nav ul {
@@ -213,10 +231,11 @@ h2 {
     color: white;
     font-size: 1.5rem;
     text-transform: uppercase;
+    transition: color 0.3s;
 }
 
-.mobile-nav.active {
-    left: 0;
+.mobile-nav ul li a:hover {
+    color: var(--primary-light);
 }
 
 
@@ -764,6 +783,8 @@ footer {
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 20px;
+        position: fixed; /* Keep navbar fixed on mobile */
+        background-color: var(--primary-dark); /* Add background to navbar on mobile */
     }
 
     .nav-links {
