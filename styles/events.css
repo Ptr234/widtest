@@ -18,8 +18,7 @@ body {
 .hero {
     height: 60vh;
     width: 100%;
-        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../public/images/PBR-9693.jpg') center/30% no-repeat;
-    background-size: cover;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../public/images/PBR-9693.jpg') center/cover no-repeat; /* Changed 30% to cover */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,9 +155,9 @@ body {
 /* The Floating Popup Card (Simulated based on screenshot) */
 .cal-popup {
     position: absolute;
-    top: 55%;
+    top: 50%; /* Adjusted from 55% */
     left: 50%;
-    transform: translate(-50%, -20%);
+    transform: translate(-50%, -50%); /* Centered both horizontally and vertically */
     width: 280px;
     background-color: var(--primary-sage);
     border-radius: 12px;
@@ -225,17 +224,42 @@ footer {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
-    .events-container { grid-template-columns: 1fr; }
+    .events-container { 
+        grid-template-columns: 1fr; 
+        padding: 0 20px; /* Adjusted padding */
+    }
     .hero-title { font-size: 2.5rem; }
     .calendar-grid { font-size: 0.8rem; }
     .cal-cell { height: 70px; }
     .news-form { flex-direction: column; align-items: center; }
-    .news-input { width: 100%; }
+    .news-input { width: 80%; /* Adjusted width for better mobile input */ }
+    .small-card-img { width: 100%; height: 150px; } /* Ensure this applies */
 }
 @media (max-width: 600px) {
     .hero-title { font-size: 2rem; }
+    .events-container { padding: 0 15px; } /* Further adjust padding */
     .event-card-small { flex-direction: column; height: auto; }
     .small-card-img { width: 100%; height: 150px; }
     .footer-grid { grid-template-columns: 1fr; gap: 30px; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    .cal-popup {
+        width: 90%; /* Make popup responsive */
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .large-card-img {
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+    .news-input {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+@media (max-width: 400px) {
+    .hero-title { font-size: 1.8rem; }
+    .hero-desc { font-size: 0.8rem; }
+    .cal-head-title { font-size: 1.8rem; }
+    .news-title { font-size: 1.8rem; }
+    .events-container { margin: 30px auto; }
+    .event-card-large .large-card-content { padding: 20px; }
+    .small-card-content { padding: 15px; }
 }
