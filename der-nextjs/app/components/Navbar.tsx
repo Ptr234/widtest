@@ -1,0 +1,46 @@
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <nav className={`navbar ${isOpen ? 'is-active' : ''}`}>
+      <div className="navbar-logo">
+        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.13 133.39" fill="currentColor">
+          <path d="M80.84,44.4c1.37-2.26,3.41-4.09,6.34-2.95,2.78,1.09,2.85,3.73,2.59,6.21-.85,7.96-4.49,14.4-11.3,20.03-2.04-8.5-1.96-16.14,2.37-23.29M158.8,32.46c-.8-.74-1.58-1.51-3.05-2.93,1.39.33,1.71.4,2.02.49,9.4,2.62,18.21,1.91,25.95-4.65,3.13-2.65,3.16-3.45.42-6.4-2.87-3.08-5.94-5.98-8.66-9.18-1.85-2.17-3.61-2.87-6.33-1.63-1.88.85-4.01,1.27-6.08,1.58-13.67,2.05-26.15-1.3-37.59-8.74-2.23-1.45-3.61-1.4-5.33.63-3.15,3.72-6.49,7.27-9.79,10.86-1.34,1.46-1.57,2.81-.09,4.33,12.25,12.68,13.96,27.52,9.13,43.79-.34,1.16.11,3.06.92,3.97,3.38,3.81,7.08,7.33,10.56,11.05,1.53,1.64,2.93,1.64,4.03-.15,1.9-3.08,3.94-6.16,5.25-9.5,2.56-6.55,2.18-13.35.53-20.2,1.52,1.28,2.85,2.58,4,4.04,7.85,9.94,12,20.97,8.86,33.71-3.91,15.91-17.95,25.29-34.23,23.17-12.78-1.67-23.18-7.49-31.09-17.78,2.61-2.41,5.17-4.54,7.46-6.92,12.19-12.68,17.72-27.62,14.77-45.21-1.2-7.2-4.69-13.12-11.43-16.61-13.5-6.99-28.75-1.66-36.17,12.62-4.74,9.13-6.78,18.97-6.84,29.16-.03,4.54.44,9.17.85,14.02-14.69,1.24-28.86-7.42-32.81-21.87-3.12-11.41-.25-21.51,5.96-30.73,1.1-1.63.66-3.83-1.05-4.79l-12.7-7.2c-2.01-1.14-4.65-.64-5.96,1.28-15.21,22.38-13.72,54.5,5.42,74.53,11.92,12.47,26.66,16.75,43.08,14.63,1.86-.06,3.73-.2,5.64-.53,1.63-.28,2.78-.41,3.93,1.27,11.38,16.52,27.06,26.55,46.79,29.88,18.23,3.08,34.44-1.28,47.24-15.09,21.9-23.65,20.1-63.09-3.61-84.9"/>
+        </svg>
+      </div>
+      <ul className="nav-links">
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/designers">Designers</Link></li>
+        <li><Link href="/suppliers">Suppliers</Link></li>
+        <li><Link href="/programs">Programs</Link></li>
+        <li><Link href="/events">Events</Link></li>
+        <li><Link href="/about">About</Link></li>
+        <li><Link href="/media">Media</Link></li>
+      </ul>
+      <div className="auth-buttons">
+        <Link href="/login">Login</Link>
+        <Link href="/join" className="join-btn">Join WiD</Link>
+      </div>
+      <button
+        className="hamburger-menu"
+        aria-label="Toggle menu"
+        aria-expanded={isOpen}
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  );
+}

@@ -1,0 +1,211 @@
+/* --- VARIABLES & RESET (Overriding or adding specific variables for About page) --- */
+/* These variables might need to be defined in a more global way or passed via theming context if used broadly.
+   For now, we'll keep them here if they are truly page-specific. */
+:root {
+    --primary-dark: #35453B; /* Specific dark green for About page */
+    --primary-light: #D5DAD7;
+    --accent-gold: #C5A065;
+    --footer-bg: #F5F5F3;
+    --card-vision: #4a4a4a;
+    --card-mission: #d99a6c;
+    --text-white: #ffffff;
+}
+
+/* --- ABOUT PAGE HERO STYLE --- */
+.about-hero {
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('/images/PBR-9740.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.about-hero h4 { font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+.about-hero h1 { font-size: 3.5rem; max-width: 800px; line-height: 1.1; margin-bottom: 20px; }
+.about-hero p { max-width: 600px; font-size: 1rem; margin-bottom: 30px; line-height: 1.5; }
+
+.btn-hero {
+    background: white;
+    color: var(--primary-dark);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}/* --- WHO WE ARE (Dark Section) --- */
+.section-dark {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 80px 40px;
+}
+
+.container { /* This is a general utility, included for context if it had overrides */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Video/Image Gallery Left */
+.gallery-wrapper { display: flex; flex-direction: column; gap: 15px; }
+
+.main-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.main-video img { width: 100%; height: 100%; object-fit: cover; }
+.play-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.thumbnails { display: flex; gap: 10px; align-items: center; }
+.thumb-img {
+    flex: 1;
+    aspect-ratio: 4/3;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0.7;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.thumb-img:hover { opacity: 1; }
+.thumb-img img { width: 100%; height: 100%; object-fit: cover; }
+.nav-arrow { font-size: 1.5rem; cursor: pointer; padding: 0 10px; opacity: 0.7; }
+
+/* Text Right */
+.sub-heading { font-family: var(--font-body); letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; opacity: 0.8; }
+.section-title { font-size: 3rem; margin-bottom: 20px; line-height: 1; }
+.text-block p { font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; opacity: 0.9; }
+
+/* --- OBJECTIVES (Light Section) --- */
+.section-light {
+    background-color: var(--primary-light);
+    padding: 80px 40px;
+    color: #333;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: 40% 55%;
+    gap: 5%;
+}
+
+/* Vision/Mission Cards */
+.cards-stack { display: flex; flex-direction: column; gap: 20px; }
+
+.info-card {
+    border-radius: 12px;
+    padding: 30px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-card h3 { font-size: 1.5rem; margin-bottom: 10px; position: relative; z-index: 2; }
+.info-card p { font-size: 0.9rem; line-height: 1.5; position: relative; z-index: 2; }
+
+.card-bg-img {
+    position: absolute; top:0; left:0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0; opacity: 0.4; mix-blend-mode: overlay;
+}
+
+.card-vision { background-color: #333; }
+.card-mission { background-color: #C08552; }
+
+/* Objectives List */
+.obj-list-container h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-dark); }
+.obj-intro { font-size: 0.9rem; margin-bottom: 30px; color: #555; }
+
+.obj-list li {
+    border-bottom: 1px solid #bbb;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #444;
+    cursor: pointer;
+}
+.obj-list li:hover { color: var(--primary-dark); font-weight: bold; }
+.obj-list li i { font-size: 0.8rem; color: #777; }
+
+/* --- GOVERNING TEAM --- */
+.team-intro { text-align: center; margin-bottom: 50px; }
+.team-intro h2 { font-size: 2.5rem; }
+.team-intro p { max-width: 500px; margin: 10px auto; font-size: 0.9rem; opacity: 0.8; }
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    width: 18%; /* Fits 5 in a row approx */
+    min-width: 180px;
+    margin-bottom: 30px;
+}
+
+.team-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #555;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+.team-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.team-role { font-size: 0.6rem; text-transform: uppercase; opacity: 0.7; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+.team-name { font-size: 0.95rem; font-weight: bold; margin-bottom: 3px; font-family: var(--font-body); }
+.team-company { font-size: 0.75rem; opacity: 0.8; }
+
+.about-footer { /* Renamed from footer to avoid purity issue */
+    background-color: var(--footer-bg);
+}
+
+.watermark {
+    position: absolute; right: -50px; bottom: -50px;
+    font-size: 25rem; font-family: var(--font-heading);
+    color: rgba(0,0,0,0.03); pointer-events: none; z-index: 1; font-style: italic;
+}
+.about-footer-logo { font-family: var(--font-heading); } /* Use project heading font */
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .who-grid, .objectives-grid { grid-template-columns: 1fr; gap: 40px; }
+    .team-card { width: 45%; }
+    /* Mobile header/nav handled by global style.css */
+}

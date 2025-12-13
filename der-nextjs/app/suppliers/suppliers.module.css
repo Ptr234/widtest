@@ -1,0 +1,290 @@
+/* --- VARIABLES (Specific to SuppliersNew.html, overriding global or adding new) --- */
+:root {
+    --dark-green: #384A40;
+    --sage-green: #A8B8AD;
+    --light-sage: #C9D1CD;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --bg-light: #f4f4f4;
+}
+
+/* --- Navbar (If there are specific overrides for the nav, e.g. active link color) --- */
+/* This part is handled by the global Navbar component and globals.css.
+   If specific overrides are truly needed, they might need to be handled differently,
+   e.g., by passing props to Navbar or more specific global CSS. */
+
+/* --- Hero Section --- */
+.hero {
+    height: 60vh;
+    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative; /* ensure overlay works */
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(56, 74, 64, 0.5); /* Dark green overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
+}
+
+.hero-title {
+    font-family: var(--font-heading); /* Use project heading font */
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px 25px;
+    padding-right: 50px;
+    border-radius: 30px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-body); /* Use project body font */
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--dark-green);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* --- Main Content --- */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Filter Section */
+.filter-section {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.filter-label {
+    font-weight: 700;
+    margin-right: 10px;
+    color: var(--dark-green);
+}
+
+.filter-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.filter-list li {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.filter-list li:hover, .filter-list li.active {
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+/* Supplier Grid */
+.supplier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.supplier-card {
+    background: var(--light-sage);
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.supplier-card:hover { transform: translateY(-5px); }
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.business-name {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--dark-green);
+}
+
+.specialty {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.btn-see-more, .btn-contact {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid var(--dark-green);
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dark-green);
+    transition: all 0.3s;
+}
+.btn-see-more:hover, .btn-contact:hover {
+    background: var(--dark-green);
+    color: white;
+}
+
+/* Text-only Card */
+.supplier-card.text-card .card-content {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.supplier-card.text-card .desc {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    font-size: 0.9rem;
+    color: #666;
+}
+.page-num { cursor: pointer; }
+.page-num.active {
+    font-weight: 700;
+    color: var(--dark-green);
+}
+
+/* --- Sign Up Section --- */
+.signup-section {
+    background: var(--dark-green);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    /* Subtle texture overlay */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(45)" opacity="0.05" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23ffffff" stroke-width="1"><path d="M0 0h100v100H0z"/><path d="M0 0l100 100"/></g></svg>');
+}
+
+.signup-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
+}
+
+.signup-title {
+    font-family: var(--font-heading); /* Use project heading font */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.signup-desc {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.signup-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: transparent;
+    color: white;
+    font-family: var(--font-body); /* Use project body font */
+    font-size: 0.85rem;
+    outline: none;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.6); }
+
+.btn-signup-submit {
+    background: var(--light-sage);
+    color: var(--dark-green);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-signup-submit:hover { background: white; }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .hero-title { font-size: 2.5rem; }
+    .signup-form { grid-template-columns: 1fr; }
+}
